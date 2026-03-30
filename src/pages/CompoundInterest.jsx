@@ -3,10 +3,10 @@ import CalculatorLayout from "../components/calculators/CalculatorLayout";
 import { formatCurrency } from "../utils/formatCurrency";
 
 export default function CompoundInterest() {
-  const [initialInvestment, setInitialInvestment] = useState(5000);
-  const [monthlyContribution, setMonthlyContribution] = useState(1500);
-  const [annualReturn, setAnnualReturn] = useState(12);
-  const [years, setYears] = useState(10);
+  const [initialInvestment, setInitialInvestment] = useState("5000");
+  const [monthlyContribution, setMonthlyContribution] = useState("1500");
+  const [annualReturn, setAnnualReturn] = useState("12");
+  const [years, setYears] = useState("10");
 
   const results = useMemo(() => {
     const principal = Number(initialInvestment) || 0;
@@ -98,7 +98,7 @@ export default function CompoundInterest() {
           <input
             type="number"
             value={initialInvestment}
-            onChange={(e) => setInitialInvestment(Number(e.target.value))}
+            onChange={(e) => setInitialInvestment(e.target.value)}
             placeholder="e.g. 5000"
             className="w-full rounded-2xl border border-white/10 bg-[#0B1628] px-4 py-3 text-white outline-none transition placeholder:text-slate-500 focus:border-cyan-400/40"
           />
@@ -111,7 +111,7 @@ export default function CompoundInterest() {
           <input
             type="number"
             value={monthlyContribution}
-            onChange={(e) => setMonthlyContribution(Number(e.target.value))}
+            onChange={(e) => setMonthlyContribution(e.target.value)}
             placeholder="e.g. 1500"
             className="w-full rounded-2xl border border-white/10 bg-[#0B1628] px-4 py-3 text-white outline-none transition placeholder:text-slate-500 focus:border-cyan-400/40"
           />
@@ -126,7 +126,7 @@ export default function CompoundInterest() {
               type="number"
               step="0.1"
               value={annualReturn}
-              onChange={(e) => setAnnualReturn(Number(e.target.value))}
+              onChange={(e) => setAnnualReturn(e.target.value)}
               placeholder="e.g. 12"
               className="w-full rounded-2xl border border-white/10 bg-[#0B1628] px-4 py-3 text-white outline-none transition placeholder:text-slate-500 focus:border-cyan-400/40"
             />
@@ -139,7 +139,7 @@ export default function CompoundInterest() {
             <input
               type="number"
               value={years}
-              onChange={(e) => setYears(Number(e.target.value))}
+              onChange={(e) => setYears(e.target.value)}
 
               placeholder="e.g. 10"
               className="w-full rounded-2xl border border-white/10 bg-[#0B1628] px-4 py-3 text-white outline-none transition placeholder:text-slate-500 focus:border-cyan-400/40"

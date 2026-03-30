@@ -3,10 +3,10 @@ import CalculatorLayout from "../components/calculators/CalculatorLayout";
 import { formatCurrency } from "../utils/formatCurrency";
 
 export default function BondRepayment() {
-  const [propertyPrice, setPropertyPrice] = useState(850000);
-  const [deposit, setDeposit] = useState(85000);
-  const [interestRate, setInterestRate] = useState(11.75);
-  const [termYears, setTermYears] = useState(20);
+  const [propertyPrice, setPropertyPrice] = useState("850000");
+  const [deposit, setDeposit] = useState("85000");
+  const [interestRate, setInterestRate] = useState("11.75");
+  const [termYears, setTermYears] = useState("20");
 
   const results = useMemo(() => {
     const price = Number(propertyPrice) || 0;
@@ -112,7 +112,7 @@ export default function BondRepayment() {
           <input
             type="number"
             value={propertyPrice}
-            onChange={(e) => setPropertyPrice(Number(e.target.value))}
+            onChange={(e) => setPropertyPrice(e.target.value)}
             placeholder="e.g. 850000"
             className="w-full rounded-2xl border border-white/10 bg-[#0B1628] px-4 py-3 text-white outline-none transition placeholder:text-slate-500 focus:border-cyan-400/40"
           />
@@ -125,7 +125,7 @@ export default function BondRepayment() {
           <input
             type="number"
             value={deposit}
-            onChange={(e) => setDeposit(Number(e.target.value))}
+            onChange={(e) => setDeposit(e.target.value)}
             placeholder="e.g. 85000"
             className="w-full rounded-2xl border border-white/10 bg-[#0B1628] px-4 py-3 text-white outline-none transition placeholder:text-slate-500 focus:border-cyan-400/40"
           />
@@ -140,7 +140,7 @@ export default function BondRepayment() {
               type="number"
               step="0.01"
               value={interestRate}
-              onChange={(e) => setInterestRate(Number(e.target.value))}
+              onChange={(e) => setInterestRate(e.target.value)}
               placeholder="e.g. 11.75"
               className="w-full rounded-2xl border border-white/10 bg-[#0B1628] px-4 py-3 text-white outline-none transition placeholder:text-slate-500 focus:border-cyan-400/40"
             />
@@ -153,7 +153,7 @@ export default function BondRepayment() {
             <input
               type="number"
               value={termYears}
-              onChange={(e) => setTermYears(Number(e.target.value))}
+              onChange={(e) => setTermYears(e.target.value)}
 
               placeholder="e.g. 20"
               className="w-full rounded-2xl border border-white/10 bg-[#0B1628] px-4 py-3 text-white outline-none transition placeholder:text-slate-500 focus:border-cyan-400/40"
