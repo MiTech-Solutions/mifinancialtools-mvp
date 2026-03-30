@@ -8,10 +8,12 @@ import CompoundInterest from "./pages/CompoundInterest";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import Terms from "./pages/Terms";
 import Disclaimer from "./pages/Disclaimer";
+import ScrollToTop from "./components/common/ScrollToTop";
 
 export default function App() {
   return (
     <BrowserRouter>
+      <ScrollToTop />
       <div className="flex min-h-screen flex-col bg-[#07111F] text-slate-50">
         <Navbar />
         <main className="flex-1">
