@@ -111,7 +111,7 @@ export default function CarRepayment() {
           <input
             type="number"
             value={vehiclePrice}
-            onChange={(e) => setVehiclePrice(e.target.value)}
+            onChange={(e) => setVehiclePrice(Number(e.target.value))}
             placeholder="e.g. 250000"
             className="w-full rounded-2xl border border-white/10 bg-[#0B1628] px-4 py-3 text-white outline-none transition placeholder:text-slate-500 focus:border-cyan-400/40"
           />
@@ -124,7 +124,7 @@ export default function CarRepayment() {
           <input
             type="number"
             value={deposit}
-            onChange={(e) => setDeposit(e.target.value)}
+            onChange={(e) => setDeposit(Number(e.target.value))}
             placeholder="e.g. 30000"
             className="w-full rounded-2xl border border-white/10 bg-[#0B1628] px-4 py-3 text-white outline-none transition placeholder:text-slate-500 focus:border-cyan-400/40"
           />
@@ -139,7 +139,7 @@ export default function CarRepayment() {
               type="number"
               step="0.1"
               value={interestRate}
-              onChange={(e) => setInterestRate(e.target.value)}
+              onChange={(e) => setInterestRate(Number(e.target.value))}
               placeholder="e.g. 12.5"
               className="w-full rounded-2xl border border-white/10 bg-[#0B1628] px-4 py-3 text-white outline-none transition placeholder:text-slate-500 focus:border-cyan-400/40"
             />
@@ -152,7 +152,7 @@ export default function CarRepayment() {
             <input
               type="number"
               value={termMonths}
-              onChange={(e) => setTermMonths(e.target.value)}
+              onChange={(e) => setTermMonths(Number(e.target.value))}
               placeholder="e.g. 72"
               className="w-full rounded-2xl border border-white/10 bg-[#0B1628] px-4 py-3 text-white outline-none transition placeholder:text-slate-500 focus:border-cyan-400/40"
             />

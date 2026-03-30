@@ -98,7 +98,7 @@ export default function CompoundInterest() {
           <input
             type="number"
             value={initialInvestment}
-            onChange={(e) => setInitialInvestment(e.target.value)}
+            onChange={(e) => setInitialInvestment(Number(e.target.value))}
             placeholder="e.g. 5000"
             className="w-full rounded-2xl border border-white/10 bg-[#0B1628] px-4 py-3 text-white outline-none transition placeholder:text-slate-500 focus:border-cyan-400/40"
           />
@@ -111,7 +111,7 @@ export default function CompoundInterest() {
           <input
             type="number"
             value={monthlyContribution}
-            onChange={(e) => setMonthlyContribution(e.target.value)}
+            onChange={(e) => setMonthlyContribution(Number(e.target.value))}
             placeholder="e.g. 1500"
             className="w-full rounded-2xl border border-white/10 bg-[#0B1628] px-4 py-3 text-white outline-none transition placeholder:text-slate-500 focus:border-cyan-400/40"
           />
@@ -126,7 +126,7 @@ export default function CompoundInterest() {
               type="number"
               step="0.1"
               value={annualReturn}
-              onChange={(e) => setAnnualReturn(e.target.value)}
+              onChange={(e) => setAnnualReturn(Number(e.target.value))}
               placeholder="e.g. 12"
               className="w-full rounded-2xl border border-white/10 bg-[#0B1628] px-4 py-3 text-white outline-none transition placeholder:text-slate-500 focus:border-cyan-400/40"
             />
@@ -139,7 +139,7 @@ export default function CompoundInterest() {
             <input
               type="number"
               value={years}
-              onChange={(e) => setYears(e.target.value)}
+              onChange={(e) => setYears(Number(e.target.value))}
 
               placeholder="e.g. 10"
               className="w-full rounded-2xl border border-white/10 bg-[#0B1628] px-4 py-3 text-white outline-none transition placeholder:text-slate-500 focus:border-cyan-400/40"
