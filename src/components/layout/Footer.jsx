@@ -75,7 +75,7 @@ export default function Footer() {
 
       <div className="border-t border-white/10">
         <div className="mx-auto flex max-w-7xl flex-col gap-2 px-4 py-5 text-sm text-slate-500 sm:px-6 lg:flex-row lg:items-center lg:justify-between lg:px-8">
-          <p>© {new Date().getFullYear()} MiFinancial Tools. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} MiTools. All rights reserved.</p>
           <p>Built by <a href="https://mitechsolutions.org" target="_blank" rel="noopener noreferrer" className="text-cyan-300 hover:text-cyan-200">
             MiTechSolutions
           </a>.</p>

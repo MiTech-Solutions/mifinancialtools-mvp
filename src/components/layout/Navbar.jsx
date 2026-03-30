@@ -27,10 +27,10 @@ export default function Navbar() {
 
           <div className="leading-tight">
             <p className="text-base font-semibold tracking-tight text-white">
-              MiFinancial Tools
+              MiTools
             </p>
             <p className="text-xs text-slate-400">
-              Smart money tools
+              Smart Money Tools
             </p>
           </div>
         </Link>
