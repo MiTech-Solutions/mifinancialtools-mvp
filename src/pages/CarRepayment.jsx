@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useMemo, useState } from "react";
 import CalculatorLayout from "../components/calculators/CalculatorLayout";
 import { formatCurrency } from "../utils/formatCurrency";
 
@@ -8,18 +8,26 @@ export default function CarRepayment() {
   const [interestRate, setInterestRate] = useState("12.5");
   const [termMonths, setTermMonths] = useState("72");
 
-  // ✅ Direct calculation (no useMemo)
-  const price = Number(vehiclePrice) || 0;
-  const upfrontDeposit = Number(deposit) || 0;
-  const annualRate = Number(interestRate) || 0;
-  const months = Number(termMonths) || 0;
+  const results = useMemo(() => {
+    const price = Number(vehiclePrice) || 0;
+    const upfrontDeposit = Number(deposit) || 0;
+    const annualRate = Number(interestRate) || 0;
+    const months = Number(termMonths) || 0;
 
-  const principal = Math.max(price - upfrontDeposit, 0);
-  const monthlyRate = annualRate / 100 / 12;
+    const principal = Math.max(price - upfrontDeposit, 0);
+    const monthlyRate = annualRate / 100 / 12;
 
-  let monthlyRepayment = 0;
+    if (principal <= 0 || months <= 0) {
+      return {
+        principal: 0,
+        monthlyRepayment: 0,
+        totalRepayment: 0,
+        totalInterest: 0,
+      };
+    }
 
-  if (principal > 0 && months > 0) {
+    let monthlyRepayment = 0;
+
     if (monthlyRate === 0) {
       monthlyRepayment = principal / months;
     } else {
@@ -27,17 +35,17 @@ export default function CarRepayment() {
         (principal * monthlyRate) /
         (1 - Math.pow(1 + monthlyRate, -months));
     }
-  }
 
-  const totalRepayment = monthlyRepayment * months;
-  const totalInterest = totalRepayment - principal;
+    const totalRepayment = monthlyRepayment * months;
+    const totalInterest = totalRepayment - principal;
 
-  const results = {
-    principal,
-    monthlyRepayment,
-    totalRepayment,
-    totalInterest,
-  };
+    return {
+      principal,
+      monthlyRepayment,
+      totalRepayment,
+      totalInterest,
+    };
+  }, [vehiclePrice, deposit, interestRate, termMonths]);
 
   const resultPanel = (
     <div>
@@ -102,7 +110,6 @@ export default function CarRepayment() {
           </label>
           <input
             type="number"
-            inputMode="numeric"
             value={vehiclePrice}
             onChange={(e) => setVehiclePrice(e.target.value)}
             placeholder="e.g. 250000"
@@ -116,7 +123,6 @@ export default function CarRepayment() {
           </label>
           <input
             type="number"
-            inputMode="numeric"
             value={deposit}
             onChange={(e) => setDeposit(e.target.value)}
             placeholder="e.g. 30000"
@@ -131,7 +137,6 @@ export default function CarRepayment() {
             </label>
             <input
               type="number"
-              inputMode="decimal"
               step="0.1"
               value={interestRate}
               onChange={(e) => setInterestRate(e.target.value)}
@@ -146,7 +151,6 @@ export default function CarRepayment() {
             </label>
             <input
               type="number"
-              inputMode="numeric"
               value={termMonths}
               onChange={(e) => setTermMonths(e.target.value)}
               placeholder="e.g. 72"
