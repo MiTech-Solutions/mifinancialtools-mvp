@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
-import { Calculator, Mail, ShieldCheck } from "lucide-react";
+import { Mail, ShieldCheck } from "lucide-react";
+import logo from "../../assets/images/mitools-logo.png"
 
 export default function Footer() {
   return (
@@ -7,9 +8,13 @@ export default function Footer() {
       <div className="mx-auto grid max-w-7xl gap-10 px-4 py-12 sm:px-6 lg:grid-cols-3 lg:px-8">
         <div>
           <div className="flex items-center gap-3">
-            <div className="flex h-10 w-10 items-center justify-center rounded-2xl border border-cyan-400/20 bg-gradient-to-br from-blue-600 to-cyan-400">
-              <Calculator size={20} className="text-white" />
-            </div>
+<div className="flex items-center justify-center">
+  <img
+    src={logo}
+    alt="MiTools Logo"
+    className="h-24 w-24 object-contain"
+  />
+</div>
 
             <div>
               <p className="text-base font-semibold text-white">MiTools</p>
@@ -55,7 +60,7 @@ export default function Footer() {
 
             <div className="flex items-center gap-2">
               <Mail size={16} />
-              <span>support@mitechsolutions.org</span>
+              <span>info@mitechsolutions.org</span>
             </div>
           </div>
 

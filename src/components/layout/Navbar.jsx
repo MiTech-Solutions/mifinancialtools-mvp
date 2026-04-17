@@ -1,12 +1,13 @@
 import { Link, NavLink } from "react-router-dom";
-import { Calculator, Menu, X } from "lucide-react";
+import { Menu, X } from "lucide-react";
+import logo from "../../assets/images/mitools-logo.png"
 import { useState } from "react";
 
 const navItems = [
-  { label: "Home", path: "/" },
-  { label: "Car", path: "/car-repayment" },
-  { label: "Bond", path: "/bond-repayment" },
-  { label: "Invest", path: "/compound-interest" },
+  { label: "Overview", path: "/" },
+  { label: "Car Finance", path: "/car-repayment" },
+  { label: "Bond / Mortage", path: "/bond-repayment" },
+  { label: "Investments", path: "/compound-interest" },
 ];
 
 export default function Navbar() {
@@ -19,22 +20,25 @@ export default function Navbar() {
 
   return (
     <header className="sticky top-0 z-50 border-b border-white/10 bg-[#07111F]/85 backdrop-blur-xl">
-      <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
-        <Link to="/" className="flex items-center gap-3">
-          <div className="flex h-10 w-10 items-center justify-center rounded-2xl border border-cyan-400/20 bg-gradient-to-br from-blue-600 to-cyan-400 shadow-lg shadow-cyan-500/10">
-            <Calculator size={20} className="text-white" />
-          </div>
+      <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-6 sm:px-6 lg:px-8">
+<Link to="/" className="flex items-center gap-3">
+  <div className="flex h-12 w-12 items-center justify-center overflow-hidden">
+  <img
+    src={logo}
+    alt="MiTools Logo"
+    className="h-16 w-16 object-contain"
+  />
+</div>
 
-          <div className="leading-tight">
-            <p className="text-base font-semibold tracking-tight text-white">
-              MiTools
-            </p>
-            <p className="text-xs text-slate-400">
-              Smart Money Tools
-            </p>
-          </div>
-        </Link>
-
+  <div className="leading-tight">
+    <p className="text-base font-semibold tracking-tight text-white">
+      MiTools
+    </p>
+    <p className="text-xs text-slate-400">
+      Smart Money Tools
+    </p>
+  </div>
+</Link>
         <nav className="hidden items-center gap-8 md:flex">
           {navItems.map((item) => (
             <NavLink key={item.path} to={item.path} className={navLinkClass}>

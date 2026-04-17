@@ -109,26 +109,36 @@ export default function CarRepayment() {
             Vehicle price
           </label>
           <input
-            type="number"
-            value={vehiclePrice}
-            onChange={(e) => setVehiclePrice(e.target.value)}
-            placeholder="e.g. 250000"
-            className="w-full rounded-2xl border border-white/10 bg-[#0B1628] px-4 py-3 text-white outline-none transition placeholder:text-slate-500 focus:border-cyan-400/40"
-          />
+            type="text"
+            value={Number(vehiclePrice || 0).toLocaleString("en-US")}
+            onChange={(e) => {
+            const raw = e.target.value.replace(/,/g, ""); // remove commas
+        if (!isNaN(raw)) {
+          setVehiclePrice(raw);
+        }
+      }}
+        placeholder="e.g. 250000"
+        className="w-full rounded-2xl border border-white/10 bg-[#0B1628] px-4 py-3 text-white outline-none transition placeholder:text-slate-500 focus:border-cyan-400/40"
+        />
         </div>
 
-        <div>
-          <label className="mb-2 block text-sm font-medium text-slate-200">
-            Deposit
-          </label>
-          <input
-            type="number"
-            value={deposit}
-            onChange={(e) => setDeposit(e.target.value)}
-            placeholder="e.g. 30000"
-            className="w-full rounded-2xl border border-white/10 bg-[#0B1628] px-4 py-3 text-white outline-none transition placeholder:text-slate-500 focus:border-cyan-400/40"
-          />
-        </div>
+<div>
+  <label className="mb-2 block text-sm font-medium text-slate-200">
+    Deposit
+  </label>
+  <input
+    type="text"
+    value={Number(deposit || 0).toLocaleString("en-US")}
+    onChange={(e) => {
+      const raw = e.target.value.replace(/,/g, ""); // remove commas
+      if (!isNaN(raw)) {
+        setDeposit(raw);
+      }
+    }}
+    placeholder="e.g. 30000"
+    className="w-full rounded-2xl border border-white/10 bg-[#0B1628] px-4 py-3 text-white outline-none transition placeholder:text-slate-500 focus:border-cyan-400/40"
+  />
+</div>
 
         <div className="grid gap-5 sm:grid-cols-2">
           <div>

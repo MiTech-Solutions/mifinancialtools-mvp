@@ -92,35 +92,45 @@ export default function CompoundInterest() {
     >
       <div className="grid gap-5">
         <div>
-          <label className="mb-2 block text-sm font-medium text-slate-200">
-            Initial investment
-          </label>
-          <input
-            type="number"
-            value={initialInvestment}
-            onChange={(e) => setInitialInvestment(e.target.value)}
-            placeholder="e.g. 5000"
-            className="w-full rounded-2xl border border-white/10 bg-[#0B1628] px-4 py-3 text-white outline-none transition placeholder:text-slate-500 focus:border-cyan-400/40"
-          />
-        </div>
+  <label className="mb-2 block text-sm font-medium text-slate-200">
+    Initial investment
+  </label>
+  <input
+    type="text"
+    value={Number(initialInvestment || 0).toLocaleString("en-US")}
+    onChange={(e) => {
+      const raw = e.target.value.replace(/,/g, "");
+      if (!isNaN(raw)) {
+        setInitialInvestment(raw);
+      }
+    }}
+    placeholder="e.g. 5000"
+    className="w-full rounded-2xl border border-white/10 bg-[#0B1628] px-4 py-3 text-white outline-none transition placeholder:text-slate-500 focus:border-cyan-400/40"
+  />
+</div>
 
-        <div>
-          <label className="mb-2 block text-sm font-medium text-slate-200">
-            Monthly contribution
-          </label>
-          <input
-            type="number"
-            value={monthlyContribution}
-            onChange={(e) => setMonthlyContribution(e.target.value)}
-            placeholder="e.g. 1500"
-            className="w-full rounded-2xl border border-white/10 bg-[#0B1628] px-4 py-3 text-white outline-none transition placeholder:text-slate-500 focus:border-cyan-400/40"
-          />
-        </div>
+<div>
+  <label className="mb-2 block text-sm font-medium text-slate-200">
+    Monthly contribution
+  </label>
+  <input
+    type="text"
+    value={Number(monthlyContribution || 0).toLocaleString("en-US")}
+    onChange={(e) => {
+      const raw = e.target.value.replace(/,/g, "");
+      if (!isNaN(raw)) {
+        setMonthlyContribution(raw);
+      }
+    }}
+    placeholder="e.g. 1500"
+    className="w-full rounded-2xl border border-white/10 bg-[#0B1628] px-4 py-3 text-white outline-none transition placeholder:text-slate-500 focus:border-cyan-400/40"
+  />
+</div>
 
         <div className="grid gap-5 sm:grid-cols-2">
           <div>
             <label className="mb-2 block text-sm font-medium text-slate-200">
-              Annual return (%)
+              Expected annual return (%)
             </label>
             <input
               type="number"
@@ -134,7 +144,7 @@ export default function CompoundInterest() {
 
           <div>
             <label className="mb-2 block text-sm font-medium text-slate-200">
-              Years
+              Investment period (years)
             </label>
             <input
               type="number"

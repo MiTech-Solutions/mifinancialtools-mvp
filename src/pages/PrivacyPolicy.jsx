@@ -110,7 +110,7 @@ export default function PrivacyPolicy() {
             <p className="mt-3 leading-7">
               For general privacy-related questions, contact:
               <span className="ml-2 font-medium text-white">
-                contact@mitools.io
+                info@mitechsolutions.org
               </span>
             </p>
           </div>
