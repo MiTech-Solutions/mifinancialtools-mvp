@@ -1,6 +1,7 @@
 import { useMemo, useState } from "react";
 import CalculatorLayout from "../components/calculators/CalculatorLayout";
 import { formatCurrency } from "../utils/formatCurrency";
+import { Helmet } from "react-helmet-async";
 
 export default function BondRepayment() {
   const [propertyPrice, setPropertyPrice] = useState("850000");
@@ -98,12 +99,30 @@ export default function BondRepayment() {
   );
 
   return (
+    <>
+  <Helmet>
+    <title>Bond Repayment Calculator South Africa (2026) | MiTools</title>
+  <meta
+  name="description"
+  content="Bond repayment calculator South Africa. Calculate your monthly home loan instalments with interest rates, deposits, and loan terms."
+  />
+
+  <link rel="canonical" href="https://mitools.app/bond-repayment" />
+
+  <meta property="og:title" content="Bond Repayment Calculator South Africa | MiTools" />
+  <meta
+  property="og:description"
+  content="Calculate your home loan repayments in South Africa. Free bond calculator with accurate monthly instalment estimates."
+  />
+  <meta property="og:url" content="https://mitools.app/bond-repayment" />
+  </Helmet> 
     <CalculatorLayout
       eyebrow="Home loan tool"
       title="Bond Repayment Calculator"
       description="Estimate monthly home loan repayments based on property price, deposit, rate, and repayment term."
       result={resultPanel}
     >
+
       <div className="grid gap-5">
         <div>
   <label className="mb-2 block text-sm font-medium text-slate-200">
@@ -172,5 +191,6 @@ export default function BondRepayment() {
         </div>
       </div>
     </CalculatorLayout>
+    </>
   );
 }

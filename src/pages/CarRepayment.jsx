@@ -1,6 +1,9 @@
 import { useMemo, useState } from "react";
 import CalculatorLayout from "../components/calculators/CalculatorLayout";
 import { formatCurrency } from "../utils/formatCurrency";
+import { Helmet } from "react-helmet-async";
+
+
 
 export default function CarRepayment() {
   const [vehiclePrice, setVehiclePrice] = useState("250000");
@@ -97,12 +100,30 @@ export default function CarRepayment() {
   );
 
   return (
+    <>
+    <Helmet>
+    <title>Car Loan Calculator South Africa (2026) | MiTools</title>
+  <meta
+  name="description"
+  content="Car loan calculator South Africa. Calculate your monthly vehicle repayments with interest, deposit, and term. Free and accurate car finance tool."
+  />
+
+  <link rel="canonical" href="https://mitools.app/car-repayment" /> {/* check these urls */}
+
+  <meta property="og:title" content="Car Loan Calculator South Africa | MiTools" />
+  <meta
+   property="og:description"
+   content="Estimate your monthly car repayments in South Africa. Simple, accurate car finance calculator with interest and deposit options."
+  />
+  <meta property="og:url" content="https://mitools.app/car-repayment" /> {/* check these urls */}
+  </Helmet>
     <CalculatorLayout
       eyebrow="Vehicle finance tool"
       title="Car Repayment Calculator"
       description="Estimate monthly car repayments using purchase price, deposit, interest rate, and loan term."
       result={resultPanel}
     >
+
       <div className="grid gap-5">
         <div>
           <label className="mb-2 block text-sm font-medium text-slate-200">
@@ -170,5 +191,6 @@ export default function CarRepayment() {
         </div>
       </div>
     </CalculatorLayout>
+    </>
   );
 }

@@ -1,6 +1,8 @@
 import { useMemo, useState } from "react";
 import CalculatorLayout from "../components/calculators/CalculatorLayout";
 import { formatCurrency } from "../utils/formatCurrency";
+import { Helmet } from "react-helmet-async";
+
 
 export default function CompoundInterest() {
   const [initialInvestment, setInitialInvestment] = useState("5000");
@@ -84,14 +86,32 @@ export default function CompoundInterest() {
   );
 
   return (
+    <>
+      <Helmet>
+    <title>Compound Interest Calculator South Africa (2026) | MiTools</title>
+  <meta
+  name="description"
+  content="Compound interest calculator South Africa. See how your investments grow over time with monthly contributions and interest."
+  />
+
+  <link rel="canonical" href="https://mitools.app/compound-interest" />
+
+  <meta property="og:title" content="Compound Interest Calculator | MiTools" />
+  <meta
+  property="og:description"
+  content="Calculate investment growth with compound interest. Plan your savings and future wealth using our free calculator."
+  />
+  <meta property="og:url" content="https://mitools.app/compound-interest" />
+  </Helmet>
     <CalculatorLayout
       eyebrow="Investment growth tool"
       title="Compound Interest Calculator"
       description="Project your future investment value using a starting amount, monthly contributions, expected return, and time horizon."
       result={resultPanel}
     >
+
       <div className="grid gap-5">
-        <div>
+    <div>
   <label className="mb-2 block text-sm font-medium text-slate-200">
     Initial investment
   </label>
@@ -158,6 +178,7 @@ export default function CompoundInterest() {
         </div>
       </div>
     </CalculatorLayout>
+    </>
   );
 }
 
