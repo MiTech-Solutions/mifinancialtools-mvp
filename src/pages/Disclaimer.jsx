@@ -1,6 +1,12 @@
+import { Helmet } from "react-helmet-async";
 export default function Disclaimer() {
   return (
-    <section className="mx-auto max-w-4xl px-4 py-16 sm:px-6 lg:px-8">
+    <>
+      <Helmet>
+        <title>Disclaimer | MiTools</title>
+        <meta name="robots" content="noindex, follow" />
+      </Helmet>
+      <section className="mx-auto max-w-4xl px-4 py-16 sm:px-6 lg:px-8">
       <div className="rounded-[2rem] border border-white/10 bg-white/5 p-6 backdrop-blur-xl sm:p-8">
         <p className="text-sm font-medium uppercase tracking-[0.18em] text-cyan-300">
           Legal
@@ -83,5 +89,6 @@ export default function Disclaimer() {
         </div>
       </div>
     </section>
+    </>
   );
 }

@@ -101,21 +101,20 @@ export default function BondRepayment() {
   return (
     <>
   <Helmet>
-    <title>Bond Repayment Calculator South Africa (2026) | MiTools</title>
-  <meta
-  name="description"
-  content="Bond repayment calculator South Africa. Calculate your monthly home loan instalments with interest rates, deposits, and loan terms."
-  />
-
-  <link rel="canonical" href="https://mitools.app/bond-repayment" />
-
-  <meta property="og:title" content="Bond Repayment Calculator South Africa | MiTools" />
-  <meta
-  property="og:description"
-  content="Calculate your home loan repayments in South Africa. Free bond calculator with accurate monthly instalment estimates."
-  />
-  <meta property="og:url" content="https://mitools.app/bond-repayment" />
-  </Helmet> 
+    <title>Bond Repayment Calculator South Africa | MiTools</title>
+    <meta
+      name="description"
+      content="Calculate your monthly home loan repayments in South Africa. Enter your property price, deposit, interest rate, and term to estimate your bond instalment. Free tool."
+    />
+    <link rel="canonical" href="https://mitools.app/bond-repayment" />
+    <meta property="og:title" content="Bond Repayment Calculator South Africa | MiTools" />
+    <meta
+      property="og:description"
+      content="Free South African bond calculator. Estimate your monthly home loan instalment based on property price, deposit, interest rate, and repayment term."
+    />
+    <meta property="og:url" content="https://mitools.app/bond-repayment" />
+    <meta property="og:image" content="https://mitools.app/og-image.png" />
+  </Helmet>
     <CalculatorLayout
       eyebrow="Home loan tool"
       title="Bond Repayment Calculator"

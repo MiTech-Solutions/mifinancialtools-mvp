@@ -88,21 +88,20 @@ export default function CompoundInterest() {
   return (
     <>
       <Helmet>
-    <title>Compound Interest Calculator South Africa (2026) | MiTools</title>
-  <meta
-  name="description"
-  content="Compound interest calculator South Africa. See how your investments grow over time with monthly contributions and interest."
-  />
-
-  <link rel="canonical" href="https://mitools.app/compound-interest" />
-
-  <meta property="og:title" content="Compound Interest Calculator | MiTools" />
-  <meta
-  property="og:description"
-  content="Calculate investment growth with compound interest. Plan your savings and future wealth using our free calculator."
-  />
-  <meta property="og:url" content="https://mitools.app/compound-interest" />
-  </Helmet>
+        <title>Investment Growth Calculator South Africa | MiTools</title>
+        <meta
+          name="description"
+          content="Calculate how your investment grows over time using compound interest. Enter a starting amount, monthly contributions, annual return, and time horizon. Free South African investment calculator."
+        />
+        <link rel="canonical" href="https://mitools.app/compound-interest" />
+        <meta property="og:title" content="Investment Growth Calculator South Africa | MiTools" />
+        <meta
+          property="og:description"
+          content="Free compound interest and investment growth calculator for South Africa. See how monthly contributions and interest build long-term wealth."
+        />
+        <meta property="og:url" content="https://mitools.app/compound-interest" />
+        <meta property="og:image" content="https://mitools.app/og-image.png" />
+      </Helmet>
     <CalculatorLayout
       eyebrow="Investment growth tool"
       title="Compound Interest Calculator"

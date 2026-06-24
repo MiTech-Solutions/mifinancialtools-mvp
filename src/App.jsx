@@ -1,6 +1,7 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Navbar from "./components/layout/Navbar";
 import Footer from "./components/layout/Footer";
+import CookieBanner from "./components/common/CookieBanner";
 import Home from "./pages/Home";
 import CarRepayment from "./pages/CarRepayment";
 import BondRepayment from "./pages/BondRepayment";
@@ -28,6 +29,7 @@ export default function App() {
           </Routes>
         </main>
         <Footer />
+        <CookieBanner />
       </div>
     </BrowserRouter>
   );

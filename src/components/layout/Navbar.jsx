@@ -6,7 +6,7 @@ import { useState } from "react";
 const navItems = [
   { label: "Overview", path: "/" },
   { label: "Car Finance", path: "/car-repayment" },
-  { label: "Bond / Mortage", path: "/bond-repayment" },
+  { label: "Bond / Mortgage", path: "/bond-repayment" },
   { label: "Investments", path: "/compound-interest" },
 ];
 

@@ -102,21 +102,20 @@ export default function CarRepayment() {
   return (
     <>
     <Helmet>
-    <title>Car Loan Calculator South Africa (2026) | MiTools</title>
-  <meta
-  name="description"
-  content="Car loan calculator South Africa. Calculate your monthly vehicle repayments with interest, deposit, and term. Free and accurate car finance tool."
-  />
-
-  <link rel="canonical" href="https://mitools.app/car-repayment" /> {/* check these urls */}
-
-  <meta property="og:title" content="Car Loan Calculator South Africa | MiTools" />
-  <meta
-   property="og:description"
-   content="Estimate your monthly car repayments in South Africa. Simple, accurate car finance calculator with interest and deposit options."
-  />
-  <meta property="og:url" content="https://mitools.app/car-repayment" /> {/* check these urls */}
-  </Helmet>
+      <title>Car Repayment Calculator South Africa | MiTools</title>
+      <meta
+        name="description"
+        content="Calculate your monthly car repayments in South Africa. Enter your vehicle price, deposit, interest rate, and loan term to get an instant estimate. Free car finance tool."
+      />
+      <link rel="canonical" href="https://mitools.app/car-repayment" />
+      <meta property="og:title" content="Car Repayment Calculator South Africa | MiTools" />
+      <meta
+        property="og:description"
+        content="Free South African car finance calculator. Estimate your monthly vehicle repayments with deposit, interest rate, and loan term options."
+      />
+      <meta property="og:url" content="https://mitools.app/car-repayment" />
+      <meta property="og:image" content="https://mitools.app/og-image.png" />
+    </Helmet>
     <CalculatorLayout
       eyebrow="Vehicle finance tool"
       title="Car Repayment Calculator"

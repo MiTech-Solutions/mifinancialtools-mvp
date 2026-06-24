@@ -1,6 +1,12 @@
+import { Helmet } from "react-helmet-async";
 export default function PrivacyPolicy() {
   return (
-    <section className="mx-auto max-w-4xl px-4 py-16 sm:px-6 lg:px-8">
+    <>
+      <Helmet>
+        <title>Privacy Policy | MiTools</title>
+        <meta name="robots" content="noindex, follow" />
+      </Helmet>
+      <section className="mx-auto max-w-4xl px-4 py-16 sm:px-6 lg:px-8">
       <div className="rounded-[2rem] border border-white/10 bg-white/5 p-6 backdrop-blur-xl sm:p-8">
         <p className="text-sm font-medium uppercase tracking-[0.18em] text-cyan-300">
           Legal
@@ -11,18 +17,17 @@ export default function PrivacyPolicy() {
         </h1>
 
         <p className="mt-4 text-sm leading-7 text-slate-400">
-          Last updated: March 29, 2026
+          Last updated: June 25, 2026
         </p>
 
         <div className="mt-8 space-y-8 text-slate-300">
           <div>
-            <h2 className="text-xl font-semibold text-white">
-              1. Overview
-            </h2>
+            <h2 className="text-xl font-semibold text-white">1. Overview</h2>
             <p className="mt-3 leading-7">
               MiTools values your privacy. This Privacy Policy explains how
               information may be collected, used, and protected when you visit
-              and use this website.
+              and use this website. By continuing to use MiTools, you
+              acknowledge this policy.
             </p>
           </div>
 
@@ -33,8 +38,9 @@ export default function PrivacyPolicy() {
             <p className="mt-3 leading-7">
               We may collect limited technical information such as browser type,
               device information, pages visited, time spent on pages, and basic
-              usage analytics. If contact options are added in future, we may
-              also collect information you choose to provide.
+              usage analytics. We do not collect personally identifiable
+              information unless you choose to provide it (for example, via a
+              contact form if added in future).
             </p>
           </div>
 
@@ -51,14 +57,45 @@ export default function PrivacyPolicy() {
 
           <div>
             <h2 className="text-xl font-semibold text-white">
-              4. Cookies and analytics
+              4. Cookies and tracking technologies
             </h2>
             <p className="mt-3 leading-7">
-              MiTools may use cookies, analytics tools, and similar
-              technologies to improve user experience and measure site traffic.
-              Third-party services such as analytics or advertising providers
-              may also use cookies in line with their own policies.
+              MiTools uses cookies and similar tracking technologies to improve
+              user experience and measure site traffic. These include:
             </p>
+            <ul className="mt-3 space-y-2 pl-5 leading-7 list-disc">
+              <li>
+                <span className="font-medium text-white">Google Analytics</span>{" "}
+                — used to collect anonymised usage data including pages visited,
+                session duration, and device type. Google may use this data in
+                accordance with its own{" "}
+                <a
+                  href="https://policies.google.com/privacy"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-cyan-400 underline underline-offset-2 hover:text-cyan-300"
+                >
+                  Privacy Policy
+                </a>
+                .
+              </li>
+              <li>
+                <span className="font-medium text-white">Google AdSense</span>{" "}
+                — used to serve relevant advertisements on this website. Google
+                AdSense may use cookies to personalise ads based on your prior
+                visits to this or other websites. You can opt out of
+                personalised advertising by visiting{" "}
+                <a
+                  href="https://www.google.com/settings/ads"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-cyan-400 underline underline-offset-2 hover:text-cyan-300"
+                >
+                  Google Ad Settings
+                </a>
+                .
+              </li>
+            </ul>
           </div>
 
           <div>
@@ -66,15 +103,54 @@ export default function PrivacyPolicy() {
               5. Third-party services
             </h2>
             <p className="mt-3 leading-7">
-              This website may use third-party services such as hosting,
-              analytics, and advertising tools. These services may process
-              certain technical data as part of providing their functionality.
+              This website uses third-party services including hosting,
+              analytics (Google Analytics), and advertising (Google AdSense).
+              These services may process certain technical data as part of
+              providing their functionality and are governed by their own
+              privacy policies.
             </p>
           </div>
 
           <div>
             <h2 className="text-xl font-semibold text-white">
-              6. Data protection
+              6. How to control cookies
+            </h2>
+            <p className="mt-3 leading-7">
+              You can limit or disable cookies through your browser settings or
+              device privacy controls. You may also use the following tools:
+            </p>
+            <ul className="mt-3 space-y-2 pl-5 leading-7 list-disc">
+              <li>
+                <a
+                  href="https://tools.google.com/dlpage/gaoptout"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-cyan-400 underline underline-offset-2 hover:text-cyan-300"
+                >
+                  Google Analytics Opt-out Browser Add-on
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://www.google.com/settings/ads"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-cyan-400 underline underline-offset-2 hover:text-cyan-300"
+                >
+                  Google Ad Settings
+                </a>{" "}
+                (to opt out of personalised ads)
+              </li>
+            </ul>
+            <p className="mt-3 leading-7">
+              Please note that disabling cookies may affect the functionality of
+              this website and others you visit.
+            </p>
+          </div>
+
+          <div>
+            <h2 className="text-xl font-semibold text-white">
+              7. Data protection
             </h2>
             <p className="mt-3 leading-7">
               Reasonable measures are taken to protect website information, but
@@ -83,19 +159,18 @@ export default function PrivacyPolicy() {
           </div>
 
           <div>
-            <h2 className="text-xl font-semibold text-white">
-              7. Your choice
-            </h2>
+            <h2 className="text-xl font-semibold text-white">8. Your choice</h2>
             <p className="mt-3 leading-7">
-              You can limit certain tracking through browser settings, cookie
-              controls, or privacy tools made available by your device or
-              browser.
+              You can withdraw your cookie consent at any time by clearing your
+              browser cookies and revisiting the site. You may also limit
+              certain tracking through browser settings, cookie controls, or
+              privacy tools made available by your device or browser.
             </p>
           </div>
 
           <div>
             <h2 className="text-xl font-semibold text-white">
-              8. Changes to this policy
+              9. Changes to this policy
             </h2>
             <p className="mt-3 leading-7">
               This Privacy Policy may be updated from time to time. Any changes
@@ -104,9 +179,7 @@ export default function PrivacyPolicy() {
           </div>
 
           <div>
-            <h2 className="text-xl font-semibold text-white">
-              9. Contact
-            </h2>
+            <h2 className="text-xl font-semibold text-white">10. Contact</h2>
             <p className="mt-3 leading-7">
               For general privacy-related questions, contact:
               <span className="ml-2 font-medium text-white">
@@ -117,5 +190,6 @@ export default function PrivacyPolicy() {
         </div>
       </div>
     </section>
+    </>
   );
 }
