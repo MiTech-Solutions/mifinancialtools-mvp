@@ -44,6 +44,9 @@ export default function Footer() {
             <Link to="/compound-interest" className="hover:text-white">
               Compound Interest Calculator
             </Link>
+            <Link to="/income-tax" className="hover:text-white">
+              Income Tax Calculator
+            </Link>
           </div>
         </div>
 

@@ -1,11 +1,12 @@
 import { Link } from "react-router-dom";
-import { ArrowRight, Car, Home as HomeIcon, TrendingUp } from "lucide-react";
+import { ArrowRight, Car, Home as HomeIcon, TrendingUp, DollarSign } from "lucide-react";
 import { tools } from "../../data/tools";
 
 const iconMap = {
   "car-repayment": Car,
   "bond-repayment": HomeIcon,
   "compound-interest": TrendingUp,
+  "income-tax": DollarSign,
 };
 
 export default function ToolsPreview() {
@@ -14,21 +15,21 @@ export default function ToolsPreview() {
       <div className="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
         <div className="max-w-3xl">
           <div className="inline-flex items-center rounded-full border border-cyan-400/20 bg-white/5 px-4 py-2 text-sm text-cyan-300 backdrop-blur">
-            Core tools in the MVP
+            Free financial tools
           </div>
 
           <h2 className="mt-6 text-3xl font-semibold tracking-tight text-white sm:text-4xl">
-            Three calculators. Clean experience. Real everyday value.
+            Four calculators. Clean experience. Real everyday value.
           </h2>
 
           <p className="mt-4 max-w-2xl text-lg leading-8 text-slate-300">
-            MiTools starts with the most practical finance tools for daily life:
-            vehicle repayments, home loan planning, and long-term investment
-            growth.
+            MiTools gives you the most practical finance tools for daily life:
+            vehicle repayments, home loan planning, investment growth, and income
+            tax estimates.
           </p>
         </div>
 
-        <div className="mt-12 grid gap-6 lg:grid-cols-3">
+        <div className="mt-12 grid gap-6 lg:grid-cols-2 xl:grid-cols-4">
           {tools.map((tool) => {
             const Icon = iconMap[tool.id];
 

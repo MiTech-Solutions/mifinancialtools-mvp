@@ -17,4 +17,10 @@ export const tools = [
     description: "Project how your money can grow over time with monthly contributions and compounding returns.",
     path: "/compound-interest",
   },
+  {
+    id: "income-tax",
+    title: "Income Tax Calculator",
+    description: "Estimate your PAYE tax, UIF, and monthly take-home pay based on SARS 2025/26 tax tables.",
+    path: "/income-tax",
+  },
 ];

@@ -6,6 +6,7 @@ import Home from "./pages/Home";
 import CarRepayment from "./pages/CarRepayment";
 import BondRepayment from "./pages/BondRepayment";
 import CompoundInterest from "./pages/CompoundInterest";
+import IncomeTax from "./pages/IncomeTax";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import Terms from "./pages/Terms";
 import Disclaimer from "./pages/Disclaimer";
@@ -23,6 +24,7 @@ export default function App() {
             <Route path="/car-repayment" element={<CarRepayment />} />
             <Route path="/bond-repayment" element={<BondRepayment />} />
             <Route path="/compound-interest" element={<CompoundInterest />} />
+            <Route path="/income-tax" element={<IncomeTax />} />
             <Route path="/privacy-policy" element={<PrivacyPolicy />} />
             <Route path="/terms" element={<Terms />} />
             <Route path="/disclaimer" element={<Disclaimer />} />

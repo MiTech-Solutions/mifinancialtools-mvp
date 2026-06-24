@@ -8,6 +8,7 @@ const navItems = [
   { label: "Car Finance", path: "/car-repayment" },
   { label: "Bond / Mortgage", path: "/bond-repayment" },
   { label: "Investments", path: "/compound-interest" },
+  { label: "Income Tax", path: "/income-tax" },
 ];
 
 export default function Navbar() {
