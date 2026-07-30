@@ -5,6 +5,7 @@ export default function PrivacyPolicy() {
       <Helmet>
         <title>Privacy Policy | MiTools</title>
         <meta name="robots" content="noindex, follow" />
+        <link rel="canonical" href="https://mitools.app/privacy-policy" />
       </Helmet>
       <section className="mx-auto max-w-4xl px-4 py-16 sm:px-6 lg:px-8">
       <div className="rounded-[2rem] border border-white/10 bg-white/5 p-6 backdrop-blur-xl sm:p-8">
@@ -83,7 +84,9 @@ export default function PrivacyPolicy() {
                 <span className="font-medium text-white">Google AdSense</span>{" "}
                 — used to serve relevant advertisements on this website. Google
                 AdSense may use cookies to personalise ads based on your prior
-                visits to this or other websites. You can opt out of
+                visits to this or other websites. Neither Google AdSense nor
+                Google Analytics scripts load on this site until you click
+                "Accept" on our cookie banner. You can opt out of
                 personalised advertising by visiting{" "}
                 <a
                   href="https://www.google.com/settings/ads"
@@ -183,7 +186,7 @@ export default function PrivacyPolicy() {
             <p className="mt-3 leading-7">
               For general privacy-related questions, contact:
               <span className="ml-2 font-medium text-white">
-                info@mitechsolutions.org
+                mitechsolutionsza@gmail.com
               </span>
             </p>
           </div>

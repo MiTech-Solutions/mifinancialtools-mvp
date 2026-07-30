@@ -1,5 +1,7 @@
 import { useMemo, useState } from "react";
 import CalculatorLayout from "../components/calculators/CalculatorLayout";
+import CalculatorArticle from "../components/calculators/CalculatorArticle";
+import { incomeTaxContent } from "../data/content/incomeTaxContent";
 import { formatCurrency } from "../utils/formatCurrency";
 import { Helmet } from "react-helmet-async";
 
@@ -249,20 +251,26 @@ export default function IncomeTax() {
 
           {/* Salary input + monthly/annual toggle */}
           <div>
-            <label className="mb-2 block text-sm font-medium text-slate-200">
+            <label htmlFor="tax-salary" className="mb-2 block text-sm font-medium text-slate-200">
               Gross salary
             </label>
             <div className="flex gap-3">
               <input
+                id="tax-salary"
                 type="text"
                 value={formatDisplay(salaryInput)}
                 onChange={handleNumericInput(setSalaryInput)}
                 placeholder="e.g. 25 000"
                 className={inputClass + " flex-1"}
               />
-              <div className="flex shrink-0 items-center gap-1 rounded-2xl border border-white/10 bg-[#0B1628] p-1">
+              <div
+                role="group"
+                aria-label="Salary period"
+                className="flex shrink-0 items-center gap-1 rounded-2xl border border-white/10 bg-[#0B1628] p-1"
+              >
                 <button
                   type="button"
+                  aria-pressed={salaryMode === "monthly"}
                   onClick={() => setSalaryMode("monthly")}
                   className={`${toggleBase} ${salaryMode === "monthly" ? toggleActive : toggleInactive}`}
                 >
@@ -270,6 +278,7 @@ export default function IncomeTax() {
                 </button>
                 <button
                   type="button"
+                  aria-pressed={salaryMode === "annual"}
                   onClick={() => setSalaryMode("annual")}
                   className={`${toggleBase} ${salaryMode === "annual" ? toggleActive : toggleInactive}`}
                 >
@@ -281,10 +290,11 @@ export default function IncomeTax() {
 
           {/* Age group */}
           <div>
-            <label className="mb-2 block text-sm font-medium text-slate-200">
+            <label htmlFor="tax-age-group" className="mb-2 block text-sm font-medium text-slate-200">
               Age group
             </label>
             <select
+              id="tax-age-group"
               value={ageGroup}
               onChange={(e) => setAgeGroup(e.target.value)}
               className={inputClass + " cursor-pointer"}
@@ -297,29 +307,31 @@ export default function IncomeTax() {
 
           {/* RA contribution */}
           <div>
-            <label className="mb-2 block text-sm font-medium text-slate-200">
+            <label htmlFor="tax-ra-contrib" className="mb-2 block text-sm font-medium text-slate-200">
               Retirement annuity / pension contribution{" "}
               <span className="font-normal text-slate-400">(annual, optional)</span>
             </label>
             <input
+              id="tax-ra-contrib"
               type="text"
               value={formatDisplay(raContrib)}
               onChange={handleNumericInput(setRaContrib)}
               placeholder="e.g. 36 000"
               className={inputClass}
             />
-            <p className="mt-1.5 text-xs text-slate-500">
+            <p className="mt-1.5 text-xs text-slate-400">
               Capped at 27.5% of gross income by SARS.
             </p>
           </div>
 
           {/* Medical aid members */}
           <div>
-            <label className="mb-2 block text-sm font-medium text-slate-200">
+            <label htmlFor="tax-med-members" className="mb-2 block text-sm font-medium text-slate-200">
               Medical aid members{" "}
               <span className="font-normal text-slate-400">(including yourself)</span>
             </label>
             <select
+              id="tax-med-members"
               value={medMembers}
               onChange={(e) => setMedMembers(e.target.value)}
               className={inputClass + " cursor-pointer"}
@@ -331,7 +343,7 @@ export default function IncomeTax() {
               <option value="4">4 — me + 3 dependents</option>
               <option value="5">5 — me + 4 dependents</option>
             </select>
-            <p className="mt-1.5 text-xs text-slate-500">
+            <p className="mt-1.5 text-xs text-slate-400">
               Medical tax credits: R364/month for main member and first dependent,
               R246/month for each additional dependent.
             </p>
@@ -339,6 +351,7 @@ export default function IncomeTax() {
 
         </div>
       </CalculatorLayout>
+    <CalculatorArticle {...incomeTaxContent} />
     </>
   );
 }

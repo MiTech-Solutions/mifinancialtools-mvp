@@ -1,5 +1,7 @@
 import { useMemo, useState } from "react";
 import CalculatorLayout from "../components/calculators/CalculatorLayout";
+import CalculatorArticle from "../components/calculators/CalculatorArticle";
+import { bondRepaymentContent } from "../data/content/bondRepaymentContent";
 import { formatCurrency } from "../utils/formatCurrency";
 import { Helmet } from "react-helmet-async";
 
@@ -124,10 +126,11 @@ export default function BondRepayment() {
 
       <div className="grid gap-5">
         <div>
-  <label className="mb-2 block text-sm font-medium text-slate-200">
+  <label htmlFor="bond-property-price" className="mb-2 block text-sm font-medium text-slate-200">
     Property price
   </label>
   <input
+    id="bond-property-price"
     type="text"
     value={Number(propertyPrice || 0).toLocaleString("en-US")}
     onChange={(e) => {
@@ -142,10 +145,11 @@ export default function BondRepayment() {
 </div>
 
 <div>
-  <label className="mb-2 block text-sm font-medium text-slate-200">
+  <label htmlFor="bond-deposit" className="mb-2 block text-sm font-medium text-slate-200">
     Deposit
   </label>
   <input
+    id="bond-deposit"
     type="text"
     value={Number(deposit || 0).toLocaleString("en-US")}
     onChange={(e) => {
@@ -161,10 +165,11 @@ export default function BondRepayment() {
 
         <div className="grid gap-5 sm:grid-cols-2">
           <div>
-            <label className="mb-2 block text-sm font-medium text-slate-200">
+            <label htmlFor="bond-interest-rate" className="mb-2 block text-sm font-medium text-slate-200">
               Interest rate (%)
             </label>
             <input
+              id="bond-interest-rate"
               type="number"
               step="0.01"
               value={interestRate}
@@ -175,10 +180,11 @@ export default function BondRepayment() {
           </div>
 
           <div>
-            <label className="mb-2 block text-sm font-medium text-slate-200">
+            <label htmlFor="bond-term" className="mb-2 block text-sm font-medium text-slate-200">
               Term (years)
             </label>
             <input
+              id="bond-term"
               type="number"
               value={termYears}
               onChange={(e) => setTermYears(e.target.value)}
@@ -190,6 +196,7 @@ export default function BondRepayment() {
         </div>
       </div>
     </CalculatorLayout>
+    <CalculatorArticle {...bondRepaymentContent} />
     </>
   );
 }

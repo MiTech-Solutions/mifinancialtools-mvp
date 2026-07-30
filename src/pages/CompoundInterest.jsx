@@ -1,5 +1,7 @@
 import { useMemo, useState } from "react";
 import CalculatorLayout from "../components/calculators/CalculatorLayout";
+import CalculatorArticle from "../components/calculators/CalculatorArticle";
+import { compoundInterestContent } from "../data/content/compoundInterestContent";
 import { formatCurrency } from "../utils/formatCurrency";
 import { Helmet } from "react-helmet-async";
 
@@ -111,10 +113,11 @@ export default function CompoundInterest() {
 
       <div className="grid gap-5">
     <div>
-  <label className="mb-2 block text-sm font-medium text-slate-200">
+  <label htmlFor="ci-initial-investment" className="mb-2 block text-sm font-medium text-slate-200">
     Initial investment
   </label>
   <input
+    id="ci-initial-investment"
     type="text"
     value={Number(initialInvestment || 0).toLocaleString("en-US")}
     onChange={(e) => {
@@ -129,10 +132,11 @@ export default function CompoundInterest() {
 </div>
 
 <div>
-  <label className="mb-2 block text-sm font-medium text-slate-200">
+  <label htmlFor="ci-monthly-contribution" className="mb-2 block text-sm font-medium text-slate-200">
     Monthly contribution
   </label>
   <input
+    id="ci-monthly-contribution"
     type="text"
     value={Number(monthlyContribution || 0).toLocaleString("en-US")}
     onChange={(e) => {
@@ -148,10 +152,11 @@ export default function CompoundInterest() {
 
         <div className="grid gap-5 sm:grid-cols-2">
           <div>
-            <label className="mb-2 block text-sm font-medium text-slate-200">
+            <label htmlFor="ci-annual-return" className="mb-2 block text-sm font-medium text-slate-200">
               Expected annual return (%)
             </label>
             <input
+              id="ci-annual-return"
               type="number"
               step="0.1"
               value={annualReturn}
@@ -162,10 +167,11 @@ export default function CompoundInterest() {
           </div>
 
           <div>
-            <label className="mb-2 block text-sm font-medium text-slate-200">
+            <label htmlFor="ci-years" className="mb-2 block text-sm font-medium text-slate-200">
               Investment period (years)
             </label>
             <input
+              id="ci-years"
               type="number"
               value={years}
               onChange={(e) => setYears(e.target.value)}
@@ -177,6 +183,7 @@ export default function CompoundInterest() {
         </div>
       </div>
     </CalculatorLayout>
+    <CalculatorArticle {...compoundInterestContent} />
     </>
   );
 }

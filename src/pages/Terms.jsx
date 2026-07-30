@@ -5,6 +5,7 @@ export default function Terms() {
       <Helmet>
         <title>Terms and Conditions | MiTools</title>
         <meta name="robots" content="noindex, follow" />
+        <link rel="canonical" href="https://mitools.app/terms" />
       </Helmet>
       <section className="mx-auto max-w-4xl px-4 py-16 sm:px-6 lg:px-8">
       <div className="rounded-[2rem] border border-white/10 bg-white/5 p-6 backdrop-blur-xl sm:p-8">
@@ -115,7 +116,7 @@ export default function Terms() {
             <p className="mt-3 leading-7">
               For general questions about these terms, contact:
               <span className="ml-2 font-medium text-white">
-                info@mitechsolutions.org
+                mitechsolutionsza@gmail.com
               </span>
             </p>
           </div>

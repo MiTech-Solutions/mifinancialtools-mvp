@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Cookie, X } from "lucide-react";
+import { loadAdsense, loadAnalytics, loadConsentedScriptsIfAlreadyAccepted } from "../../utils/consentScripts";
 
 const COOKIE_KEY = "mitools_cookie_consent";
 
@@ -9,6 +10,11 @@ export default function CookieBanner() {
 
   useEffect(() => {
     const stored = localStorage.getItem(COOKIE_KEY);
+
+    // If the person already accepted on a previous visit, load AdSense +
+    // Analytics immediately — no need to show the banner again.
+    loadConsentedScriptsIfAlreadyAccepted(stored);
+
     if (!stored) {
       // Small delay so the page renders first
       const t = setTimeout(() => setVisible(true), 600);
@@ -18,11 +24,17 @@ export default function CookieBanner() {
 
   function accept() {
     localStorage.setItem(COOKIE_KEY, "accepted");
+    // This is the actual consent gate: AdSense and GA4 are only injected
+    // into the page here, on explicit Accept — never before.
+    loadAdsense();
+    loadAnalytics();
     setVisible(false);
   }
 
   function decline() {
     localStorage.setItem(COOKIE_KEY, "declined");
+    // Deliberately does NOT call loadAdsense()/loadAnalytics() — declining
+    // means neither script ever loads for this visitor.
     setVisible(false);
   }
 
@@ -44,16 +56,15 @@ export default function CookieBanner() {
           <p className="text-sm leading-6 text-slate-300">
             We use cookies and similar technologies — including Google Analytics
             and Google AdSense — to improve your experience and measure site
-            traffic. By clicking{" "}
-            <span className="font-medium text-white">Accept</span>, you consent
-            to our use of cookies as described in our{" "}
+            traffic. These only load if you click{" "}
+            <span className="font-medium text-white">Accept</span>. See our{" "}
             <Link
               to="/privacy-policy"
               className="font-medium text-cyan-400 underline underline-offset-2 hover:text-cyan-300"
             >
               Privacy Policy
-            </Link>
-            .
+            </Link>{" "}
+            for details.
           </p>
         </div>
 

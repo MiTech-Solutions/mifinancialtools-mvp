@@ -1,11 +1,12 @@
 import { Link } from "react-router-dom";
 import { Mail, ShieldCheck } from "lucide-react";
 import logo from "../../assets/images/mitools-logo.png"
+import { calculatorLinks, guideLinks } from "../../data/navLinks";
 
 export default function Footer() {
   return (
     <footer className="border-t border-white/10 bg-[#050D18]">
-      <div className="mx-auto grid max-w-7xl gap-10 px-4 py-12 sm:px-6 lg:grid-cols-3 lg:px-8">
+      <div className="mx-auto grid max-w-7xl gap-10 px-4 py-12 sm:px-6 lg:grid-cols-4 lg:px-8">
         <div>
           <div className="flex items-center gap-3">
 <div className="flex items-center justify-center">
@@ -32,21 +33,30 @@ export default function Footer() {
 
         <div>
           <h3 className="text-sm font-semibold uppercase tracking-[0.18em] text-slate-300">
-            Tools
+            Calculators
           </h3>
           <div className="mt-4 flex flex-col gap-3 text-sm text-slate-400">
-            <Link to="/car-repayment" className="hover:text-white">
-              Car Repayment Calculator
+            {calculatorLinks.map((item) => (
+              <Link key={item.path} to={item.path} className="hover:text-white">
+                {item.label}
+              </Link>
+            ))}
+          </div>
+        </div>
+
+        <div>
+          <h3 className="text-sm font-semibold uppercase tracking-[0.18em] text-slate-300">
+            Guides
+          </h3>
+          <div className="mt-4 flex flex-col gap-3 text-sm text-slate-400">
+            <Link to="/guides" className="hover:text-white">
+              All Guides
             </Link>
-            <Link to="/bond-repayment" className="hover:text-white">
-              Bond Repayment Calculator
-            </Link>
-            <Link to="/compound-interest" className="hover:text-white">
-              Compound Interest Calculator
-            </Link>
-            <Link to="/income-tax" className="hover:text-white">
-              Income Tax Calculator
-            </Link>
+            {guideLinks.map((item) => (
+              <Link key={item.path} to={item.path} className="hover:text-white">
+                {item.label}
+              </Link>
+            ))}
           </div>
         </div>
 
@@ -57,17 +67,23 @@ export default function Footer() {
 
           <div className="mt-4 space-y-3 text-sm text-slate-400">
             <div className="flex items-center gap-2">
-              <ShieldCheck size={16} />
+              <ShieldCheck size={16} aria-hidden="true" />
               <span>Estimates for planning purposes</span>
             </div>
 
             <div className="flex items-center gap-2">
-              <Mail size={16} />
-              <span>info@mitechsolutions.org</span>
+              <Mail size={16} aria-hidden="true" />
+              <span>mitechsolutionsza@gmail.com</span>
             </div>
           </div>
 
           <div className="mt-5 flex flex-col gap-2 text-sm text-slate-400">
+            <Link to="/about" className="hover:text-white">
+              About Us
+            </Link>
+            <Link to="/contact" className="hover:text-white">
+              Contact
+            </Link>
             <Link to="/privacy-policy" className="hover:text-white">
               Privacy Policy
             </Link>
@@ -82,7 +98,7 @@ export default function Footer() {
       </div>
 
       <div className="border-t border-white/10">
-        <div className="mx-auto flex max-w-7xl flex-col gap-2 px-4 py-5 text-sm text-slate-500 sm:px-6 lg:flex-row lg:items-center lg:justify-between lg:px-8">
+        <div className="mx-auto flex max-w-7xl flex-col gap-2 px-4 py-5 text-sm text-slate-400 sm:px-6 lg:flex-row lg:items-center lg:justify-between lg:px-8">
           <p>© {new Date().getFullYear()} MiTools. All rights reserved.</p>
           <p>Built by <a href="https://mitechsolutions.org" target="_blank" rel="noopener noreferrer" className="text-cyan-300 hover:text-cyan-200">
             MiTechSolutions

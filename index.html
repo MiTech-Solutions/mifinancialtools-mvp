@@ -13,8 +13,6 @@
       content="MiTools offers free financial calculators for South Africa including car loan, bond repayment, and compound interest calculators. Plan your finances and make smarter money decisions."
     />
 
-    <!-- Adscense -->
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6192910473694997" crossorigin="anonymous"></script>
     <!-- Robots -->
     <meta name="robots" content="index, follow" />
 
@@ -39,27 +37,38 @@
       content="Free South African financial calculators for car loans, bonds, tax, and investments. Built for smarter money decisions."
     />
     <meta name="twitter:image" content="https://mitools.app/og-image.png" />
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DRNM4L70J4"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
 
-      gtag('config', 'G-DRNM4L70J4');
-    </script>
+    <!--
+      Google AdSense and Google Analytics (gtag.js) are intentionally NOT
+      loaded here. Both are only injected after the person accepts cookies,
+      via src/utils/consentScripts.js, called from CookieBanner.jsx.
+      This is what makes the cookie banner's "Decline" option actually mean
+      something, instead of just hiding a notice while tracking runs anyway.
+    -->
 
     <!-- Google Search -->
     <meta name="application-name" content="MiTools">
     <meta name="apple-mobile-web-app-title" content="MiTools">
 
-    <script type="application/Id+json">
+    <script type="application/ld+json">
       {
         "@context": "https://schema.org",
         "@type": "WebSite",
         "name": "MiTools",
         "alternateName": "MiTools South Africa",
         "url": "https://mitools.app"
+      }
+    </script>
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "MiTechSolutions",
+        "url": "https://mitools.app",
+        "logo": "https://mitools.app/og-image.png",
+        "email": "mitechsolutionsza@gmail.com",
+        "description": "MiTechSolutions builds MiTools, a free set of financial calculators and guides for South Africa."
       }
     </script>
   </head>

@@ -2,7 +2,7 @@ import { Helmet } from "react-helmet-async";
 import Hero from "../components/home/Hero";
 import ToolsPreview from "../components/home/ToolsPreview";
 import WhyUseMitools from "../components/home/WhyUseMitools";
-import ArticlesSection from "../components/home/ArticlesSection";
+import GuidesPreview from "../components/home/GuidesPreview";
 import CTASection from "../components/home/CTASection";
 
 export default function Home() {
@@ -26,7 +26,7 @@ export default function Home() {
       <Hero />
       <ToolsPreview />
       <WhyUseMitools />
-      <ArticlesSection />
+      <GuidesPreview />
       <CTASection />
     </>
   );

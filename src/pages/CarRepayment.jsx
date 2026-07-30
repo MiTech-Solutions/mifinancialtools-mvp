@@ -1,5 +1,7 @@
 import { useMemo, useState } from "react";
 import CalculatorLayout from "../components/calculators/CalculatorLayout";
+import CalculatorArticle from "../components/calculators/CalculatorArticle";
+import { carRepaymentContent } from "../data/content/carRepaymentContent";
 import { formatCurrency } from "../utils/formatCurrency";
 import { Helmet } from "react-helmet-async";
 
@@ -125,10 +127,11 @@ export default function CarRepayment() {
 
       <div className="grid gap-5">
         <div>
-          <label className="mb-2 block text-sm font-medium text-slate-200">
+          <label htmlFor="car-vehicle-price" className="mb-2 block text-sm font-medium text-slate-200">
             Vehicle price
           </label>
           <input
+            id="car-vehicle-price"
             type="text"
             value={Number(vehiclePrice || 0).toLocaleString("en-US")}
             onChange={(e) => {
@@ -143,10 +146,11 @@ export default function CarRepayment() {
         </div>
 
 <div>
-  <label className="mb-2 block text-sm font-medium text-slate-200">
+  <label htmlFor="car-deposit" className="mb-2 block text-sm font-medium text-slate-200">
     Deposit
   </label>
   <input
+    id="car-deposit"
     type="text"
     value={Number(deposit || 0).toLocaleString("en-US")}
     onChange={(e) => {
@@ -162,10 +166,11 @@ export default function CarRepayment() {
 
         <div className="grid gap-5 sm:grid-cols-2">
           <div>
-            <label className="mb-2 block text-sm font-medium text-slate-200">
+            <label htmlFor="car-interest-rate" className="mb-2 block text-sm font-medium text-slate-200">
               Interest rate (%)
             </label>
             <input
+              id="car-interest-rate"
               type="number"
               step="0.1"
               value={interestRate}
@@ -176,10 +181,11 @@ export default function CarRepayment() {
           </div>
 
           <div>
-            <label className="mb-2 block text-sm font-medium text-slate-200">
+            <label htmlFor="car-term" className="mb-2 block text-sm font-medium text-slate-200">
               Term (months)
             </label>
             <input
+              id="car-term"
               type="number"
               value={termMonths}
               onChange={(e) => setTermMonths(e.target.value)}
@@ -190,6 +196,7 @@ export default function CarRepayment() {
         </div>
       </div>
     </CalculatorLayout>
+    <CalculatorArticle {...carRepaymentContent} />
     </>
   );
 }
