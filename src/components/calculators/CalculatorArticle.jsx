@@ -83,7 +83,7 @@ export default function CalculatorArticle({
           {/* Introduction */}
           {intro.length > 0 && (
             <div className="mt-4 space-y-4">
-              <div className="inline-flex items-center gap-2 rounded-full border border-cyan-400/20 bg-white/5 px-3 py-1 text-xs font-medium text-cyan-300">
+              <div className="inline-flex items-center gap-2 rounded-full border border-[#D6A343]/20 bg-white/5 px-3 py-1 text-xs font-medium text-[#E8C685]">
                 <Info size={12} aria-hidden="true" />
                 Introduction
               </div>
@@ -101,7 +101,7 @@ export default function CalculatorArticle({
           {/* How it works */}
           {howItWorks && (
             <div className="mt-14 space-y-4">
-              <div className="inline-flex items-center gap-2 rounded-full border border-cyan-400/20 bg-white/5 px-3 py-1 text-xs font-medium text-cyan-300">
+              <div className="inline-flex items-center gap-2 rounded-full border border-[#D6A343]/20 bg-white/5 px-3 py-1 text-xs font-medium text-[#E8C685]">
                 <Calculator size={12} aria-hidden="true" />
                 How it works
               </div>
@@ -157,7 +157,7 @@ export default function CalculatorArticle({
           {/* Formula */}
           {formula && (
             <div className="mt-14 space-y-4">
-              <div className="inline-flex items-center gap-2 rounded-full border border-cyan-400/20 bg-white/5 px-3 py-1 text-xs font-medium text-cyan-300">
+              <div className="inline-flex items-center gap-2 rounded-full border border-[#D6A343]/20 bg-white/5 px-3 py-1 text-xs font-medium text-[#E8C685]">
                 <BookOpen size={12} aria-hidden="true" />
                 Formula
               </div>
@@ -170,7 +170,7 @@ export default function CalculatorArticle({
                 </p>
               ))}
 
-              <div className="rounded-2xl border border-white/10 bg-[#0B1628] p-5 font-mono text-sm leading-7 text-cyan-300 sm:text-base">
+              <div className="rounded-2xl border border-white/10 bg-[#171F1B] p-5 font-mono text-sm leading-7 text-[#E8C685] sm:text-base">
                 {formula.expression}
               </div>
 
@@ -178,7 +178,7 @@ export default function CalculatorArticle({
                 <ul className="mt-2 space-y-1.5">
                   {formula.variables.map((v) => (
                     <li key={v.symbol} className="text-sm leading-6 text-slate-400">
-                      <span className="font-mono text-cyan-300">{v.symbol}</span>{" "}
+                      <span className="font-mono text-[#E8C685]">{v.symbol}</span>{" "}
                       = {v.meaning}
                     </li>
                   ))}
@@ -190,7 +190,7 @@ export default function CalculatorArticle({
           {/* Worked examples */}
           {examples.length > 0 && (
             <div className="mt-14 space-y-6">
-              <div className="inline-flex items-center gap-2 rounded-full border border-cyan-400/20 bg-white/5 px-3 py-1 text-xs font-medium text-cyan-300">
+              <div className="inline-flex items-center gap-2 rounded-full border border-[#D6A343]/20 bg-white/5 px-3 py-1 text-xs font-medium text-[#E8C685]">
                 <Sparkles size={12} aria-hidden="true" />
                 Worked examples
               </div>
@@ -217,7 +217,7 @@ export default function CalculatorArticle({
                         </li>
                       ))}
                     </ol>
-                    <p className="mt-3 text-sm font-medium text-cyan-300">
+                    <p className="mt-3 text-sm font-medium text-[#E8C685]">
                       {ex.result}
                     </p>
                   </div>
@@ -235,7 +235,7 @@ export default function CalculatorArticle({
               <ul className="space-y-2">
                 {benefits.map((b, i) => (
                   <li key={i} className="flex gap-3 text-base leading-7 text-slate-300">
-                    <span className="mt-2.5 h-1.5 w-1.5 shrink-0 rounded-full bg-cyan-400" />
+                    <span className="mt-2.5 h-1.5 w-1.5 shrink-0 rounded-full bg-[#D6A343]" />
                     {b}
                   </li>
                 ))}
@@ -271,7 +271,7 @@ export default function CalculatorArticle({
           {/* FAQ */}
           {faqs.length > 0 && (
             <div className="mt-14 space-y-4">
-              <div className="inline-flex items-center gap-2 rounded-full border border-cyan-400/20 bg-white/5 px-3 py-1 text-xs font-medium text-cyan-300">
+              <div className="inline-flex items-center gap-2 rounded-full border border-[#D6A343]/20 bg-white/5 px-3 py-1 text-xs font-medium text-[#E8C685]">
                 <HelpCircle size={12} aria-hidden="true" />
                 FAQ
               </div>

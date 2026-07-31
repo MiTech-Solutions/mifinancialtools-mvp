@@ -27,7 +27,7 @@ export default function Navbar() {
     location.pathname === "/guides" || guideLinks.some((g) => g.path === location.pathname);
 
   return (
-    <header className="sticky top-0 z-50 border-b border-white/10 bg-[#07111F]/85 backdrop-blur-xl">
+    <header className="sticky top-0 z-50 border-b border-white/10 bg-[#0E1613]/85 backdrop-blur-xl">
       <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-6 sm:px-6 lg:px-8">
         <Link to="/" className="flex items-center gap-3">
           <div className="flex h-12 w-12 items-center justify-center overflow-hidden">
@@ -61,7 +61,7 @@ export default function Navbar() {
         <div className="hidden md:block">
           <Link
             to="/car-repayment"
-            className="inline-flex items-center rounded-xl bg-blue-600 px-4 py-2 text-sm font-medium text-white transition hover:bg-blue-500"
+            className="inline-flex items-center rounded-xl bg-[#C68F2A] px-4 py-2 text-sm font-medium text-white transition hover:bg-[#D6A343]"
           >
             Try a calculator
           </Link>
@@ -78,7 +78,7 @@ export default function Navbar() {
       </div>
 
       {isOpen && (
-        <div className="border-t border-white/10 bg-[#0B1628] md:hidden">
+        <div className="border-t border-white/10 bg-[#171F1B] md:hidden">
           <div className="mx-auto flex max-w-7xl flex-col px-4 py-4 sm:px-6">
             <div className="flex flex-col gap-1">
               <NavLink
@@ -190,7 +190,7 @@ export default function Navbar() {
 
             <Link
               to="/car-repayment"
-              className="mt-4 inline-flex items-center justify-center rounded-xl bg-blue-600 px-4 py-3 text-sm font-medium text-white transition hover:bg-blue-500"
+              className="mt-4 inline-flex items-center justify-center rounded-xl bg-[#C68F2A] px-4 py-3 text-sm font-medium text-white transition hover:bg-[#D6A343]"
             >
               Try a calculator
             </Link>

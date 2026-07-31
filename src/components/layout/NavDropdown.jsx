@@ -54,7 +54,7 @@ export default function NavDropdown({ label, items, isActive }) {
       {open && (
         <div
           role="menu"
-          className="absolute left-1/2 top-full z-50 mt-3 w-72 -translate-x-1/2 rounded-2xl border border-white/10 bg-[#0B1628] p-2 shadow-2xl"
+          className="absolute left-1/2 top-full z-50 mt-3 w-72 -translate-x-1/2 rounded-2xl border border-white/10 bg-[#171F1B] p-2 shadow-2xl"
         >
           {items.map((item) => (
             <Link

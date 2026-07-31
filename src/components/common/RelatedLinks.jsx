@@ -24,7 +24,7 @@ export default function RelatedLinks({ items = [], heading = "Related tools & gu
           <Link
             key={item.path}
             to={item.path}
-            className="group flex items-center justify-between rounded-2xl border border-white/10 bg-white/5 p-4 transition hover:border-cyan-400/30 hover:bg-white/[0.07]"
+            className="group flex items-center justify-between rounded-2xl border border-white/10 bg-white/5 p-4 transition hover:border-[#D6A343]/30 hover:bg-white/[0.07]"
           >
             <div>
               <p className="font-medium text-white">{item.label}</p>
@@ -33,7 +33,7 @@ export default function RelatedLinks({ items = [], heading = "Related tools & gu
             <ArrowRight
               size={18}
               aria-hidden="true"
-              className="ml-3 shrink-0 text-slate-500 transition group-hover:translate-x-0.5 group-hover:text-cyan-300"
+              className="ml-3 shrink-0 text-slate-500 transition group-hover:translate-x-0.5 group-hover:text-[#E8C685]"
             />
           </Link>
         ))}

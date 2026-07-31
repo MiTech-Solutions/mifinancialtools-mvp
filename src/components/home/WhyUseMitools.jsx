@@ -1,29 +1,29 @@
-import { ShieldCheck, Zap, LineChart, Smartphone } from "lucide-react";
+import { FileCheck2, Calculator, MapPin, Lock } from "lucide-react";
 
 const features = [
   {
-    title: "Simple by design",
+    title: "Real SARS tax tables",
     description:
-      "Clear layouts and focused inputs help users get answers fast without confusion.",
-    icon: Zap,
+      "The income tax calculator uses the actual 2025/26 brackets, rebates, and medical tax credits — not a rough approximation.",
+    icon: FileCheck2,
   },
   {
-    title: "Built for real planning",
+    title: "Standard loan mathematics",
     description:
-      "Useful estimates for cars, property, and investing so users can make better money decisions.",
-    icon: LineChart,
+      "Car and bond calculators use the same amortisation formula South African banks use, so the numbers match what you'd get in a real quote.",
+    icon: Calculator,
   },
   {
-    title: "Modern and trustworthy",
+    title: "Built around South Africa",
     description:
-      "A premium interface builds confidence and makes the tools feel reliable from the first click.",
-    icon: ShieldCheck,
+      "Prime-linked rates, local finance norms, and Rand figures throughout — not a generic global tool adapted after the fact.",
+    icon: MapPin,
   },
   {
-    title: "Mobile-friendly experience",
+    title: "No account, no paywall",
     description:
-      "Designed to work cleanly on phones, where many users will discover and use the calculators.",
-    icon: Smartphone,
+      "Every calculator and guide is free to use. No signup, no email capture before you see a number.",
+    icon: Lock,
   },
 ];
 
@@ -32,18 +32,18 @@ export default function WhyUseMitools() {
     <section className="relative">
       <div className="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
         <div className="max-w-3xl">
-          <div className="inline-flex items-center rounded-full border border-cyan-400/20 bg-white/5 px-4 py-2 text-sm text-cyan-300 backdrop-blur">
+          <div className="inline-flex items-center rounded-full border border-[#D6A343]/20 bg-white/5 px-4 py-2 text-sm text-[#E8C685] backdrop-blur">
             Why MiTools
           </div>
 
-          <h2 className="mt-6 text-3xl font-semibold tracking-tight text-white sm:text-4xl">
-            Useful tools wrapped in a premium product experience.
+          <h2 className="font-display mt-6 text-3xl font-semibold tracking-tight text-white sm:text-4xl">
+            Numbers you can actually trust.
           </h2>
 
           <p className="mt-4 max-w-2xl text-lg leading-8 text-slate-300">
-            MiTools is built to make everyday financial planning easier through
-            clean design, practical tools, and a modern interface that feels
-            trustworthy.
+            Most calculators online are built for a different country and
+            adapted after the fact. MiTools is built around South African
+            numbers from the ground up.
           </p>
         </div>
 
@@ -54,13 +54,16 @@ export default function WhyUseMitools() {
             return (
               <article
                 key={feature.title}
-                className="rounded-[1.75rem] border border-white/10 bg-white/5 p-6 backdrop-blur-xl transition duration-300 hover:-translate-y-1 hover:border-cyan-400/30"
+                className="rounded-[1.75rem] border border-white/10 bg-white/5 p-6 backdrop-blur-xl transition duration-300 hover:-translate-y-1 hover:border-[#D6A343]/30"
               >
-                <div className="flex h-14 w-14 items-center justify-center rounded-2xl border border-cyan-400/20 bg-gradient-to-br from-blue-600/30 to-cyan-400/20 text-cyan-300">
-                  <Icon size={24} />
-                </div>
+                <Icon size={22} className="text-[#D6A343]" aria-hidden="true" />
+                <div
+                  className="mt-4 h-px w-10"
+                  style={{ backgroundColor: "#D6A343" }}
+                  aria-hidden="true"
+                />
 
-                <h3 className="mt-6 text-xl font-semibold text-white">
+                <h3 className="font-display mt-5 text-xl font-semibold text-white">
                   {feature.title}
                 </h3>
 

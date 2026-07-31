@@ -31,13 +31,13 @@ export default function App() {
   return (
     <BrowserRouter>
       <ScrollToTop />
-      <div className="flex min-h-screen flex-col bg-[#07111F] text-slate-50">
+      <div className="flex min-h-screen flex-col bg-[#0E1613] text-slate-50">
         <Navbar />
         <main className="flex-1">
           <Suspense
             fallback={
               <div className="flex min-h-[60vh] items-center justify-center">
-                <div className="h-8 w-8 animate-spin rounded-full border-2 border-white/10 border-t-cyan-400" />
+                <div className="h-8 w-8 animate-spin rounded-full border-2 border-white/10 border-t-[#D6A343]" />
               </div>
             }
           >

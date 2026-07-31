@@ -8,7 +8,7 @@ export default function GuidesPreview() {
       <div className="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
         <div className="flex flex-col justify-between gap-6 sm:flex-row sm:items-end">
           <div className="max-w-2xl">
-            <div className="inline-flex items-center gap-2 rounded-full border border-cyan-400/20 bg-white/5 px-4 py-2 text-sm text-cyan-300 backdrop-blur">
+            <div className="inline-flex items-center gap-2 rounded-full border border-[#D6A343]/20 bg-white/5 px-4 py-2 text-sm text-[#E8C685] backdrop-blur">
               <BookOpen size={14} />
               Guides
             </div>
@@ -23,7 +23,7 @@ export default function GuidesPreview() {
 
           <Link
             to="/guides"
-            className="inline-flex shrink-0 items-center gap-1.5 text-sm font-medium text-cyan-300 hover:text-cyan-200"
+            className="inline-flex shrink-0 items-center gap-1.5 text-sm font-medium text-[#E8C685] hover:text-cyan-200"
           >
             View all guides
             <ArrowRight size={16} />
@@ -35,7 +35,7 @@ export default function GuidesPreview() {
             <Link
               key={guide.path}
               to={guide.path}
-              className="group flex flex-col justify-between rounded-[1.75rem] border border-white/10 bg-white/5 p-6 backdrop-blur-xl transition duration-300 hover:-translate-y-1 hover:border-cyan-400/30"
+              className="group flex flex-col justify-between rounded-[1.75rem] border border-white/10 bg-white/5 p-6 backdrop-blur-xl transition duration-300 hover:-translate-y-1 hover:border-[#D6A343]/30"
             >
               <div>
                 <h3 className="text-lg font-semibold text-white">
@@ -45,7 +45,7 @@ export default function GuidesPreview() {
                   {guide.description}
                 </p>
               </div>
-              <div className="mt-6 flex items-center gap-1.5 text-sm font-medium text-cyan-300">
+              <div className="mt-6 flex items-center gap-1.5 text-sm font-medium text-[#E8C685]">
                 Read guide
                 <ArrowRight
                   size={15}

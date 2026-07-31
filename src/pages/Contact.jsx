@@ -56,10 +56,10 @@ export default function Contact() {
       </Helmet>
 
       <section className="relative overflow-hidden">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(34,211,238,0.12),transparent_24%),radial-gradient(circle_at_80%_20%,rgba(37,99,235,0.14),transparent_24%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(214,163,67,0.12),transparent_24%),radial-gradient(circle_at_80%_20%,rgba(78,155,110,0.14),transparent_24%)]" />
 
         <div className="relative mx-auto max-w-3xl px-4 py-16 sm:px-6 lg:px-8 lg:py-20">
-          <div className="inline-flex items-center rounded-full border border-cyan-400/20 bg-white/5 px-4 py-2 text-sm text-cyan-300 backdrop-blur">
+          <div className="inline-flex items-center rounded-full border border-[#D6A343]/20 bg-white/5 px-4 py-2 text-sm text-[#E8C685] backdrop-blur">
             Contact Us
           </div>
 
@@ -73,10 +73,10 @@ export default function Contact() {
           </p>
 
           <div className="mt-8 flex items-center gap-3 rounded-2xl border border-white/10 bg-white/5 p-5">
-            <Mail size={20} className="shrink-0 text-cyan-300" />
+            <Mail size={20} className="shrink-0 text-[#E8C685]" />
             <a
               href="mailto:mitechsolutionsza@gmail.com"
-              className="text-sm font-medium text-white hover:text-cyan-300"
+              className="text-sm font-medium text-white hover:text-[#E8C685]"
             >
               mitechsolutionsza@gmail.com
             </a>
@@ -100,7 +100,7 @@ export default function Contact() {
                 required
                 value={formData.name}
                 onChange={handleChange}
-                className="w-full rounded-xl border border-white/10 bg-[#0B1628] px-4 py-2.5 text-sm text-white placeholder:text-slate-500 focus:border-cyan-400/50 focus:outline-none focus:ring-2 focus:ring-cyan-400/20"
+                className="w-full rounded-xl border border-white/10 bg-[#171F1B] px-4 py-2.5 text-sm text-white placeholder:text-slate-500 focus:border-[#D6A343]/50 focus:outline-none focus:ring-2 focus:ring-[#D6A343]/20"
                 placeholder="Your name"
               />
             </div>
@@ -116,7 +116,7 @@ export default function Contact() {
                 required
                 value={formData.email}
                 onChange={handleChange}
-                className="w-full rounded-xl border border-white/10 bg-[#0B1628] px-4 py-2.5 text-sm text-white placeholder:text-slate-500 focus:border-cyan-400/50 focus:outline-none focus:ring-2 focus:ring-cyan-400/20"
+                className="w-full rounded-xl border border-white/10 bg-[#171F1B] px-4 py-2.5 text-sm text-white placeholder:text-slate-500 focus:border-[#D6A343]/50 focus:outline-none focus:ring-2 focus:ring-[#D6A343]/20"
                 placeholder="you@example.com"
               />
             </div>
@@ -132,7 +132,7 @@ export default function Contact() {
                 rows={5}
                 value={formData.message}
                 onChange={handleChange}
-                className="w-full resize-none rounded-xl border border-white/10 bg-[#0B1628] px-4 py-2.5 text-sm text-white placeholder:text-slate-500 focus:border-cyan-400/50 focus:outline-none focus:ring-2 focus:ring-cyan-400/20"
+                className="w-full resize-none rounded-xl border border-white/10 bg-[#171F1B] px-4 py-2.5 text-sm text-white placeholder:text-slate-500 focus:border-[#D6A343]/50 focus:outline-none focus:ring-2 focus:ring-[#D6A343]/20"
                 placeholder="What's on your mind?"
               />
             </div>
@@ -140,7 +140,7 @@ export default function Contact() {
             <button
               type="submit"
               disabled={status === "sending"}
-              className="inline-flex w-full items-center justify-center gap-2 rounded-xl bg-blue-600 px-5 py-3 text-sm font-medium text-white transition hover:bg-blue-500 disabled:cursor-not-allowed disabled:opacity-60 sm:w-auto"
+              className="inline-flex w-full items-center justify-center gap-2 rounded-xl bg-[#C68F2A] px-5 py-3 text-sm font-medium text-white transition hover:bg-[#D6A343] disabled:cursor-not-allowed disabled:opacity-60 sm:w-auto"
             >
               <Send size={16} />
               {status === "sending" ? "Sending..." : "Send message"}

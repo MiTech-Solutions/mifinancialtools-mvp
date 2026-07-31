@@ -14,7 +14,7 @@ export default function ToolsPreview() {
     <section className="relative">
       <div className="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
         <div className="max-w-3xl">
-          <div className="inline-flex items-center rounded-full border border-cyan-400/20 bg-white/5 px-4 py-2 text-sm text-cyan-300 backdrop-blur">
+          <div className="inline-flex items-center rounded-full border border-[#D6A343]/20 bg-white/5 px-4 py-2 text-sm text-[#E8C685] backdrop-blur">
             Free financial tools
           </div>
 
@@ -36,12 +36,12 @@ export default function ToolsPreview() {
             return (
               <article
                 key={tool.id}
-                className="group relative overflow-hidden rounded-[1.75rem] border border-white/10 bg-white/5 p-6 backdrop-blur-xl transition duration-300 hover:-translate-y-1 hover:border-cyan-400/30 hover:bg-white/[0.07]"
+                className="group relative overflow-hidden rounded-[1.75rem] border border-white/10 bg-white/5 p-6 backdrop-blur-xl transition duration-300 hover:-translate-y-1 hover:border-[#D6A343]/30 hover:bg-white/[0.07]"
               >
-                <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(34,211,238,0.10),transparent_30%)] opacity-0 transition duration-300 group-hover:opacity-100" />
+                <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(214,163,67,0.10),transparent_30%)] opacity-0 transition duration-300 group-hover:opacity-100" />
 
                 <div className="relative">
-                  <div className="flex h-14 w-14 items-center justify-center rounded-2xl border border-cyan-400/20 bg-gradient-to-br from-blue-600/30 to-cyan-400/20 text-cyan-300">
+                  <div className="flex h-14 w-14 items-center justify-center rounded-2xl border border-[#D6A343]/20 bg-gradient-to-br from-[#C68F2A]/30 to-[#D6A343]/20 text-[#E8C685]">
                     {Icon ? <Icon size={24} /> : null}
                   </div>
 
@@ -56,7 +56,7 @@ export default function ToolsPreview() {
                   <div className="mt-8">
                     <Link
                       to={tool.path}
-                      className="inline-flex items-center text-sm font-medium text-cyan-300 transition hover:text-cyan-200"
+                      className="inline-flex items-center text-sm font-medium text-[#E8C685] transition hover:text-cyan-200"
                     >
                       Open calculator
                       <ArrowRight

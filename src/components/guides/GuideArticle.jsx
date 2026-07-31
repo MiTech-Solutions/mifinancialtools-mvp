@@ -64,7 +64,7 @@ export default function GuideArticle({
             <ul className="space-y-2 pt-1">
               {section.list.map((item, i) => (
                 <li key={i} className="flex gap-3 text-base leading-7 text-slate-300">
-                  <span className="mt-2.5 h-1.5 w-1.5 shrink-0 rounded-full bg-cyan-400" />
+                  <span className="mt-2.5 h-1.5 w-1.5 shrink-0 rounded-full bg-[#D6A343]" />
                   {item}
                 </li>
               ))}
@@ -74,12 +74,12 @@ export default function GuideArticle({
       ))}
 
       {keyTakeaways.length > 0 && (
-        <div className="mt-12 rounded-[1.75rem] border border-cyan-400/20 bg-cyan-400/5 p-6 sm:p-8">
+        <div className="mt-12 rounded-[1.75rem] border border-[#D6A343]/20 bg-[#D6A343]/5 p-6 sm:p-8">
           <h2 className="text-xl font-semibold text-white">Key takeaways</h2>
           <ul className="mt-4 space-y-3">
             {keyTakeaways.map((item, i) => (
               <li key={i} className="flex gap-3 text-sm leading-6 text-slate-300">
-                <CheckCircle2 size={18} aria-hidden="true" className="mt-0.5 shrink-0 text-cyan-400" />
+                <CheckCircle2 size={18} aria-hidden="true" className="mt-0.5 shrink-0 text-[#D6A343]" />
                 {item}
               </li>
             ))}
@@ -89,7 +89,7 @@ export default function GuideArticle({
 
       {faqs.length > 0 && (
         <div className="mt-12 space-y-4">
-          <div className="inline-flex items-center gap-2 rounded-full border border-cyan-400/20 bg-white/5 px-3 py-1 text-xs font-medium text-cyan-300">
+          <div className="inline-flex items-center gap-2 rounded-full border border-[#D6A343]/20 bg-white/5 px-3 py-1 text-xs font-medium text-[#E8C685]">
             <HelpCircle size={12} aria-hidden="true" />
             FAQ
           </div>

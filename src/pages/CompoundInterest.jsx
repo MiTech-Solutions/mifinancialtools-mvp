@@ -47,11 +47,11 @@ export default function CompoundInterest() {
 
   const resultPanel = (
     <div>
-      <p className="text-sm font-medium uppercase tracking-[0.18em] text-cyan-300">
+      <p className="text-sm font-medium uppercase tracking-[0.18em] text-[#E8C685]">
         Estimated results
       </p>
 
-      <h2 className="mt-4 text-2xl font-semibold text-white">
+      <h2 className="font-display mt-4 text-2xl font-semibold text-white">
         Investment growth breakdown
       </h2>
 
@@ -63,7 +63,7 @@ export default function CompoundInterest() {
       <div className="mt-8 space-y-4">
         <div className="rounded-2xl border border-white/10 bg-white/5 p-4">
           <p className="text-sm text-slate-400">Projected future value</p>
-          <p className="mt-2 text-2xl font-semibold text-white">
+          <p className="font-numeral mt-2 text-2xl font-semibold text-white">
             {formatCurrency(results.futureValue)}
           </p>
         </div>
@@ -71,14 +71,14 @@ export default function CompoundInterest() {
         <div className="grid gap-4 sm:grid-cols-2">
           <div className="rounded-2xl border border-white/10 bg-white/5 p-4">
             <p className="text-sm text-slate-400">Total contributions</p>
-            <p className="mt-2 text-xl font-semibold text-white">
+            <p className="font-numeral mt-2 text-xl font-semibold text-white">
               {formatCurrency(results.totalContributions)}
             </p>
           </div>
 
           <div className="rounded-2xl border border-white/10 bg-white/5 p-4">
             <p className="text-sm text-slate-400">Estimated growth</p>
-            <p className="mt-2 text-xl font-semibold text-white">
+            <p className="font-numeral mt-2 text-xl font-semibold text-white">
               {formatCurrency(results.totalGrowth)}
             </p>
           </div>
@@ -127,7 +127,7 @@ export default function CompoundInterest() {
       }
     }}
     placeholder="e.g. 5000"
-    className="w-full rounded-2xl border border-white/10 bg-[#0B1628] px-4 py-3 text-white outline-none transition placeholder:text-slate-500 focus:border-cyan-400/40"
+    className="w-full rounded-2xl border border-white/10 bg-[#171F1B] px-4 py-3 text-white outline-none transition placeholder:text-slate-500 focus:border-[#D6A343]/40"
   />
 </div>
 
@@ -146,7 +146,7 @@ export default function CompoundInterest() {
       }
     }}
     placeholder="e.g. 1500"
-    className="w-full rounded-2xl border border-white/10 bg-[#0B1628] px-4 py-3 text-white outline-none transition placeholder:text-slate-500 focus:border-cyan-400/40"
+    className="w-full rounded-2xl border border-white/10 bg-[#171F1B] px-4 py-3 text-white outline-none transition placeholder:text-slate-500 focus:border-[#D6A343]/40"
   />
 </div>
 
@@ -162,7 +162,7 @@ export default function CompoundInterest() {
               value={annualReturn}
               onChange={(e) => setAnnualReturn(e.target.value)}
               placeholder="e.g. 12"
-              className="w-full rounded-2xl border border-white/10 bg-[#0B1628] px-4 py-3 text-white outline-none transition placeholder:text-slate-500 focus:border-cyan-400/40"
+              className="w-full rounded-2xl border border-white/10 bg-[#171F1B] px-4 py-3 text-white outline-none transition placeholder:text-slate-500 focus:border-[#D6A343]/40"
             />
           </div>
 
@@ -177,7 +177,7 @@ export default function CompoundInterest() {
               onChange={(e) => setYears(e.target.value)}
 
               placeholder="e.g. 10"
-              className="w-full rounded-2xl border border-white/10 bg-[#0B1628] px-4 py-3 text-white outline-none transition placeholder:text-slate-500 focus:border-cyan-400/40"
+              className="w-full rounded-2xl border border-white/10 bg-[#171F1B] px-4 py-3 text-white outline-none transition placeholder:text-slate-500 focus:border-[#D6A343]/40"
             />
           </div>
         </div>

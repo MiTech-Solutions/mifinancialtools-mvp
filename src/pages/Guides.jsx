@@ -23,11 +23,11 @@ export default function Guides() {
       </Helmet>
 
       <section className="relative overflow-hidden">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(34,211,238,0.12),transparent_24%),radial-gradient(circle_at_80%_20%,rgba(37,99,235,0.14),transparent_24%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(214,163,67,0.12),transparent_24%),radial-gradient(circle_at_80%_20%,rgba(78,155,110,0.14),transparent_24%)]" />
 
         <div className="relative mx-auto max-w-6xl px-4 py-16 sm:px-6 lg:px-8 lg:py-20">
           <div className="max-w-2xl">
-            <div className="inline-flex items-center rounded-full border border-cyan-400/20 bg-white/5 px-4 py-2 text-sm text-cyan-300 backdrop-blur">
+            <div className="inline-flex items-center rounded-full border border-[#D6A343]/20 bg-white/5 px-4 py-2 text-sm text-[#E8C685] backdrop-blur">
               Financial Guides
             </div>
             <h1 className="mt-6 text-3xl font-semibold tracking-tight text-white sm:text-4xl lg:text-5xl">
@@ -45,7 +45,7 @@ export default function Guides() {
               <Link
                 key={guide.path}
                 to={guide.path}
-                className="group flex flex-col justify-between rounded-[1.75rem] border border-white/10 bg-white/5 p-6 backdrop-blur-xl transition duration-300 hover:-translate-y-1 hover:border-cyan-400/30"
+                className="group flex flex-col justify-between rounded-[1.75rem] border border-white/10 bg-white/5 p-6 backdrop-blur-xl transition duration-300 hover:-translate-y-1 hover:border-[#D6A343]/30"
               >
                 <div>
                   <h2 className="text-xl font-semibold text-white">
@@ -55,7 +55,7 @@ export default function Guides() {
                     {guide.description}
                   </p>
                 </div>
-                <div className="mt-6 flex items-center gap-1.5 text-sm font-medium text-cyan-300">
+                <div className="mt-6 flex items-center gap-1.5 text-sm font-medium text-[#E8C685]">
                   Read guide
                   <ArrowRight
                     size={16}

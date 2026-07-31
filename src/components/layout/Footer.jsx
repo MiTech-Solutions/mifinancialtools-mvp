@@ -5,7 +5,7 @@ import { calculatorLinks, guideLinks } from "../../data/navLinks";
 
 export default function Footer() {
   return (
-    <footer className="border-t border-white/10 bg-[#050D18]">
+    <footer className="border-t border-white/10 bg-[#0A100D]">
       <div className="mx-auto grid max-w-7xl gap-10 px-4 py-12 sm:px-6 lg:grid-cols-4 lg:px-8">
         <div>
           <div className="flex items-center gap-3">
@@ -100,7 +100,7 @@ export default function Footer() {
       <div className="border-t border-white/10">
         <div className="mx-auto flex max-w-7xl flex-col gap-2 px-4 py-5 text-sm text-slate-400 sm:px-6 lg:flex-row lg:items-center lg:justify-between lg:px-8">
           <p>© {new Date().getFullYear()} MiTools. All rights reserved.</p>
-          <p>Built by <a href="https://mitechsolutions.org" target="_blank" rel="noopener noreferrer" className="text-cyan-300 hover:text-cyan-200">
+          <p>Built by <a href="https://mitechsolutions.org" target="_blank" rel="noopener noreferrer" className="text-[#E8C685] hover:text-cyan-200">
             MiTechSolutions
           </a>.</p>
         </div>

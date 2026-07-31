@@ -121,21 +121,21 @@ export default function IncomeTax() {
   }
 
   const inputClass =
-    "w-full rounded-2xl border border-white/10 bg-[#0B1628] px-4 py-3 text-white outline-none transition placeholder:text-slate-500 focus:border-cyan-400/40";
+    "w-full rounded-2xl border border-white/10 bg-[#171F1B] px-4 py-3 text-white outline-none transition placeholder:text-slate-500 focus:border-[#D6A343]/40";
 
   const toggleBase =
     "flex-1 rounded-xl px-3 py-2 text-sm font-medium transition";
-  const toggleActive   = "bg-blue-600 text-white";
+  const toggleActive   = "bg-[#C68F2A] text-white";
   const toggleInactive = "text-slate-400 hover:text-white";
 
   // ── Result panel ──────────────────────────────────────────────────────────
   const resultPanel = (
     <div>
-      <p className="text-sm font-medium uppercase tracking-[0.18em] text-cyan-300">
+      <p className="text-sm font-medium uppercase tracking-[0.18em] text-[#E8C685]">
         Estimated results
       </p>
 
-      <h2 className="mt-4 text-2xl font-semibold text-white">
+      <h2 className="font-display mt-4 text-2xl font-semibold text-white">
         Tax breakdown
       </h2>
 
@@ -145,7 +145,7 @@ export default function IncomeTax() {
       </p>
 
       {/* Hero figure */}
-      <div className="mt-6 rounded-2xl border border-cyan-400/20 bg-cyan-400/5 p-4">
+      <div className="mt-6 rounded-2xl border border-[#D6A343]/20 bg-[#D6A343]/5 p-4">
         <p className="text-sm text-slate-400">Estimated monthly take-home</p>
         <p className="mt-2 text-3xl font-bold text-white">
           {formatCurrency(results.monthlyTakeHome)}
@@ -156,13 +156,13 @@ export default function IncomeTax() {
       <div className="mt-4 grid gap-3 sm:grid-cols-2">
         <div className="rounded-2xl border border-white/10 bg-white/5 p-4">
           <p className="text-sm text-slate-400">Monthly PAYE tax</p>
-          <p className="mt-2 text-xl font-semibold text-white">
+          <p className="font-numeral mt-2 text-xl font-semibold text-white">
             {formatCurrency(results.monthlyTax)}
           </p>
         </div>
         <div className="rounded-2xl border border-white/10 bg-white/5 p-4">
           <p className="text-sm text-slate-400">Monthly UIF</p>
-          <p className="mt-2 text-xl font-semibold text-white">
+          <p className="font-numeral mt-2 text-xl font-semibold text-white">
             {formatCurrency(results.monthlyUIF)}
           </p>
         </div>
@@ -172,13 +172,13 @@ export default function IncomeTax() {
       <div className="mt-3 grid gap-3 sm:grid-cols-2">
         <div className="rounded-2xl border border-white/10 bg-white/5 p-4">
           <p className="text-sm text-slate-400">Effective tax rate</p>
-          <p className="mt-2 text-xl font-semibold text-white">
+          <p className="font-numeral mt-2 text-xl font-semibold text-white">
             {results.effectiveRate.toFixed(1)}%
           </p>
         </div>
         <div className="rounded-2xl border border-white/10 bg-white/5 p-4">
           <p className="text-sm text-slate-400">Marginal tax rate</p>
-          <p className="mt-2 text-xl font-semibold text-white">
+          <p className="font-numeral mt-2 text-xl font-semibold text-white">
             {results.marginal.toFixed(0)}%
           </p>
         </div>
@@ -266,7 +266,7 @@ export default function IncomeTax() {
               <div
                 role="group"
                 aria-label="Salary period"
-                className="flex shrink-0 items-center gap-1 rounded-2xl border border-white/10 bg-[#0B1628] p-1"
+                className="flex shrink-0 items-center gap-1 rounded-2xl border border-white/10 bg-[#171F1B] p-1"
               >
                 <button
                   type="button"

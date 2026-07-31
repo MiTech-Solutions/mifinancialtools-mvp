@@ -5,9 +5,9 @@ export default function CTASection() {
   return (
     <section className="relative">
       <div className="mx-auto max-w-7xl px-4 pb-20 sm:px-6 lg:px-8">
-        <div className="overflow-hidden rounded-[2rem] border border-white/10 bg-gradient-to-r from-blue-600/20 via-[#0F1B2D] to-cyan-400/10 p-8 shadow-2xl sm:p-10 lg:p-12">
+        <div className="overflow-hidden rounded-[2rem] border border-white/10 bg-gradient-to-r from-[#C68F2A]/20 via-[#1B2723] to-[#D6A343]/10 p-8 shadow-2xl sm:p-10 lg:p-12">
           <div className="max-w-3xl">
-            <div className="inline-flex items-center rounded-full border border-cyan-400/20 bg-white/5 px-4 py-2 text-sm text-cyan-300 backdrop-blur">
+            <div className="inline-flex items-center rounded-full border border-[#D6A343]/20 bg-white/5 px-4 py-2 text-sm text-[#E8C685] backdrop-blur">
               Start planning better
             </div>
 
@@ -24,7 +24,7 @@ export default function CTASection() {
             <div className="mt-8 flex flex-col gap-4 sm:flex-row">
               <Link
                 to="/car-repayment"
-                className="inline-flex items-center justify-center rounded-2xl bg-blue-600 px-6 py-3 text-sm font-medium text-white transition hover:bg-blue-500"
+                className="inline-flex items-center justify-center rounded-2xl bg-[#C68F2A] px-6 py-3 text-sm font-medium text-white transition hover:bg-[#D6A343]"
               >
                 Try car calculator
                 <ArrowRight size={16} className="ml-2" />

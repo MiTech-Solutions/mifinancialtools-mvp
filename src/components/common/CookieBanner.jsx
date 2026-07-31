@@ -44,13 +44,13 @@ export default function CookieBanner() {
     <div
       role="dialog"
       aria-label="Cookie consent"
-      className="fixed bottom-0 left-0 right-0 z-50 border-t border-white/10 bg-[#07111F]/95 backdrop-blur-xl"
+      className="fixed bottom-0 left-0 right-0 z-50 border-t border-white/10 bg-[#0E1613]/95 backdrop-blur-xl"
     >
       <div className="mx-auto flex max-w-7xl flex-col gap-4 px-4 py-5 sm:px-6 sm:flex-row sm:items-center sm:justify-between lg:px-8">
         <div className="flex items-start gap-3">
           <Cookie
             size={20}
-            className="mt-0.5 shrink-0 text-cyan-400"
+            className="mt-0.5 shrink-0 text-[#D6A343]"
             aria-hidden="true"
           />
           <p className="text-sm leading-6 text-slate-300">
@@ -60,7 +60,7 @@ export default function CookieBanner() {
             <span className="font-medium text-white">Accept</span>. See our{" "}
             <Link
               to="/privacy-policy"
-              className="font-medium text-cyan-400 underline underline-offset-2 hover:text-cyan-300"
+              className="font-medium text-[#D6A343] underline underline-offset-2 hover:text-[#E8C685]"
             >
               Privacy Policy
             </Link>{" "}
@@ -78,7 +78,7 @@ export default function CookieBanner() {
           </button>
           <button
             onClick={accept}
-            className="inline-flex items-center rounded-xl bg-blue-600 px-5 py-2 text-sm font-medium text-white transition hover:bg-blue-500"
+            className="inline-flex items-center rounded-xl bg-[#C68F2A] px-5 py-2 text-sm font-medium text-white transition hover:bg-[#D6A343]"
           >
             Accept
           </button>
