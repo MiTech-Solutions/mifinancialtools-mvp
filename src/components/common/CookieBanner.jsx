@@ -44,7 +44,7 @@ export default function CookieBanner() {
     <div
       role="dialog"
       aria-label="Cookie consent"
-      className="fixed bottom-0 left-0 right-0 z-50 border-t border-white/10 bg-[#0E1613]/95 backdrop-blur-xl"
+      className="animate-slide-up-in fixed bottom-0 left-0 right-0 z-50 border-t border-white/10 bg-[#0E1613]/95 backdrop-blur-xl"
     >
       <div className="mx-auto flex max-w-7xl flex-col gap-4 px-4 py-5 sm:px-6 sm:flex-row sm:items-center sm:justify-between lg:px-8">
         <div className="flex items-start gap-3">
@@ -78,7 +78,7 @@ export default function CookieBanner() {
           </button>
           <button
             onClick={accept}
-            className="inline-flex items-center rounded-xl bg-[#C68F2A] px-5 py-2 text-sm font-medium text-white transition hover:bg-[#D6A343]"
+            className="inline-flex items-center rounded-xl bg-[#C68F2A] px-5 py-2 text-sm font-medium text-[#0E1613] transition hover:bg-[#D6A343]"
           >
             Accept
           </button>

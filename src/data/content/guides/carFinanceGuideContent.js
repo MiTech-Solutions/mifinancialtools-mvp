@@ -49,6 +49,13 @@ export const carFinanceGuideContent = {
       ],
     },
     {
+      heading: "Balloon payments: the other lever dealers use",
+      paragraphs: [
+        "Beyond the interest rate, the other major lever in a car finance quote is a balloon (residual) payment — a percentage of the vehicle's price, commonly 20–35%, deferred to a lump sum at the end of the term instead of being paid off monthly. It's a common way dealers present a lower headline monthly instalment on a more expensive vehicle than you might otherwise budget for.",
+        "A balloon isn't free money — you pay interest on it for the full term, and you're still on the hook for it at the end, whether by settling in cash, refinancing, or using the car's resale value. Our Balloon Payments Explained guide covers the full mechanics and the real risk (the car being worth less than the balloon when it's due), and the Car Repayment Calculator now lets you model a balloon directly against your own numbers.",
+      ],
+    },
+    {
       heading: "A realistic rate to use when planning",
       paragraphs: [
         "As a conservative planning benchmark, use 13–14% when running estimates for a new vehicle, and closer to 14–16% for a used vehicle, unless you already have a specific quote. This gives a realistic worst-case figure to budget against — better to plan for a higher rate and be pleasantly surprised than the reverse. Once you have an actual quote, run it through our Car Repayment Calculator to see your real monthly instalment and total interest.",
@@ -61,6 +68,7 @@ export const carFinanceGuideContent = {
     "Most South African car loans are fixed for the full term — your rate is locked in at signing, unlike a variable-rate bond.",
     "A bigger deposit and a newer vehicle both tend to improve the rate you're offered.",
     "Get an independent bank or originator quote before accepting dealer finance — it gives you real negotiating leverage.",
+    "A balloon payment lowers your monthly instalment but not your total cost — you still owe it, with interest, at the end of the term.",
   ],
   faqs: [
     {
@@ -92,6 +100,11 @@ export const carFinanceGuideContent = {
       label: "Budgeting Basics",
       path: "/guides/budgeting",
       description: "Work out what monthly instalment actually fits your budget.",
+    },
+    {
+      label: "Balloon Payments Explained",
+      path: "/guides/balloon-payments",
+      description: "How a residual payment changes your monthly instalment.",
     },
   ],
 };

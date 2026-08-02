@@ -14,22 +14,26 @@ export const carRepaymentContent = {
       { label: "Deposit", desc: "The upfront amount you're putting down, reducing the amount financed." },
       { label: "Interest rate", desc: "The annual interest rate quoted by the bank or dealer, usually linked to prime." },
       { label: "Term", desc: "The repayment period in months — commonly 60 or 72 months in South Africa." },
+      { label: "Balloon / residual (optional)", desc: "A percentage of the vehicle price deferred to a lump sum at the end of the term, if your deal includes one." },
     ],
     outputs: [
       { label: "Loan amount", desc: "Vehicle price minus deposit — the amount actually being financed." },
       { label: "Monthly repayment", desc: "The fixed instalment you'd pay each month for the full term." },
-      { label: "Total repayment", desc: "Every instalment added up across the full term." },
+      { label: "Balloon payment due", desc: "The lump sum still owed at the end of the term, shown separately if you've set a balloon percentage." },
+      { label: "Total repayment", desc: "Every instalment plus the balloon payment, added up across the full term." },
       { label: "Total interest", desc: "The total repayment minus the loan amount — the true cost of borrowing." },
     ],
   },
   formula: {
     paragraphs: [
       "Car finance in South Africa uses a standard fixed-rate amortisation formula. The same formula is used for personal loans and most bond calculations — only the typical rates and terms differ.",
+      "When a balloon payment is included, the formula changes slightly: the balloon amount is discounted back to today's value and subtracted from the principal before working out the monthly instalment, since that portion isn't being paid off month by month.",
     ],
-    expression: "M = P × r / (1 − (1 + r)^−n)",
+    expression: "M = P × r / (1 − (1 + r)^−n)   |   with balloon: M = (P − B(1+r)^−n) × r / (1 − (1 + r)^−n)",
     variables: [
       { symbol: "M", meaning: "monthly repayment" },
       { symbol: "P", meaning: "principal (vehicle price minus deposit)" },
+      { symbol: "B", meaning: "balloon amount (vehicle price × balloon %), only applies if set" },
       { symbol: "r", meaning: "monthly interest rate (annual rate ÷ 12 ÷ 100)" },
       { symbol: "n", meaning: "number of monthly payments (loan term in months)" },
     ],
@@ -71,6 +75,18 @@ export const carRepaymentContent = {
       result:
         "Monthly repayment falls by about R780 compared to Example 1, purely from doubling the deposit — a clear illustration of why saving before you buy matters.",
     },
+    {
+      title: "Example 4: Same deal, with a 30% balloon payment",
+      scenario:
+        "The R250,000 vehicle with a R30,000 deposit at 12.5% over 72 months from our calculator's own defaults, now with a 30% balloon (R75,000) added.",
+      steps: [
+        "Loan amount = R250,000 − R30,000 = R220,000, same as with no balloon",
+        "With no balloon, monthly repayment would be roughly R4,358",
+        "With a 30% balloon (R75,000, based on vehicle price), monthly repayment drops to roughly R3,654",
+      ],
+      result:
+        "Monthly repayment falls by about R705, but total interest rises from roughly R93,809 to R118,079 — and R75,000 is still owed as a lump sum when the term ends. See our Balloon Payments Explained guide for what your options are when that happens.",
+    },
   ],
   benefits: [
     "See a realistic monthly figure before you're sitting in a dealership finance office under pressure to sign.",
@@ -92,8 +108,8 @@ export const carRepaymentContent = {
       body: "Your actual rate depends on your credit profile. Run the numbers at a slightly higher rate than advertised so you're not caught off guard if you don't qualify for the best rate.",
     },
     {
-      title: "Ignoring the effect of a balloon payment",
-      body: "Some finance deals include a balloon (residual) payment at the end of the term to lower monthly instalments. This calculator assumes no balloon — if your quote has one, your real monthly repayment will be lower, but you'll owe a lump sum at the end.",
+      title: "Assuming a balloon payment is free money",
+      body: "A balloon lowers your monthly instalment, but you still pay interest on it for the full term and owe it as a lump sum at the end — settled in cash, refinanced, or covered by the car's resale value. Set a balloon percentage above if your quote includes one; the total interest figure will update to reflect it.",
     },
   ],
   faqs: [
@@ -107,7 +123,7 @@ export const carRepaymentContent = {
     },
     {
       q: "Why is my dealer's quoted instalment different from this calculator's result?",
-      a: "Dealer quotes often include extras like service plans, insurance premiums, or a balloon payment structure, none of which this calculator accounts for. Ask for an itemised breakdown to compare like for like.",
+      a: "Dealer quotes often include extras like service plans and insurance premiums, none of which this calculator accounts for. If your quote includes a balloon payment, make sure you've entered the same balloon percentage here — that alone can account for a large part of the difference.",
     },
     {
       q: "Is a 72-month term a good idea?",
@@ -120,6 +136,10 @@ export const carRepaymentContent = {
     {
       q: "Can I use this calculator for a used car?",
       a: "Yes — enter the used vehicle's purchase price and a rate reflecting used-vehicle finance, which is typically 1–2% higher than new-vehicle rates.",
+    },
+    {
+      q: "How does the balloon payment input work?",
+      a: "Enter it as a percentage of the vehicle price, which is how South African dealers and banks typically quote it — commonly 20–35%. The calculator lowers your monthly repayment accordingly and shows the lump sum still owed at the end of the term.",
     },
   ],
   relatedTools: [
@@ -159,6 +179,11 @@ export const carRepaymentContent = {
       label: "Debt Management",
       path: "/guides/debt-management",
       description: "Where car finance fits into your overall debt picture.",
+    },
+    {
+      label: "Balloon Payments Explained",
+      path: "/guides/balloon-payments",
+      description: "How a residual payment changes your monthly instalment.",
     },
   ],
 };

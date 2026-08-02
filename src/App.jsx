@@ -20,6 +20,7 @@ const Budgeting = lazy(() => import("./pages/guides/Budgeting"));
 const SavingMoney = lazy(() => import("./pages/guides/SavingMoney"));
 const CompoundInterestGuide = lazy(() => import("./pages/guides/CompoundInterestGuide"));
 const CarFinanceGuide = lazy(() => import("./pages/guides/CarFinanceGuide"));
+const BalloonPayments = lazy(() => import("./pages/guides/BalloonPayments"));
 const HomeLoans = lazy(() => import("./pages/guides/HomeLoans"));
 const CreditScores = lazy(() => import("./pages/guides/CreditScores"));
 const DebtManagement = lazy(() => import("./pages/guides/DebtManagement"));
@@ -55,6 +56,7 @@ export default function App() {
               element={<CompoundInterestGuide />}
             />
             <Route path="/guides/car-finance" element={<CarFinanceGuide />} />
+            <Route path="/guides/balloon-payments" element={<BalloonPayments />} />
             <Route path="/guides/home-loans" element={<HomeLoans />} />
             <Route path="/guides/credit-scores" element={<CreditScores />} />
             <Route path="/guides/debt-management" element={<DebtManagement />} />

@@ -150,7 +150,7 @@ export default function About() {
             </p>
             <Link
               to="/contact"
-              className="mt-5 inline-flex items-center rounded-xl bg-[#C68F2A] px-5 py-2.5 text-sm font-medium text-white transition hover:bg-[#D6A343]"
+              className="mt-5 inline-flex items-center rounded-xl bg-[#C68F2A] px-5 py-2.5 text-sm font-medium text-[#0E1613] transition hover:bg-[#D6A343]"
             >
               Contact us
             </Link>

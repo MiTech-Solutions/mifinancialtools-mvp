@@ -3,6 +3,7 @@ import CalculatorLayout from "../components/calculators/CalculatorLayout";
 import CalculatorArticle from "../components/calculators/CalculatorArticle";
 import { bondRepaymentContent } from "../data/content/bondRepaymentContent";
 import { formatCurrency } from "../utils/formatCurrency";
+import AnimatedCurrency from "../components/common/AnimatedCurrency";
 import { Helmet } from "react-helmet-async";
 
 export default function BondRepayment() {
@@ -70,14 +71,14 @@ export default function BondRepayment() {
         <div className="rounded-2xl border border-white/10 bg-white/5 p-4">
           <p className="text-sm text-slate-400">Loan amount</p>
           <p className="font-numeral mt-2 text-2xl font-semibold text-white">
-            {formatCurrency(results.principal)}
+            <AnimatedCurrency value={results.principal} />
           </p>
         </div>
 
         <div className="rounded-2xl border border-white/10 bg-white/5 p-4">
           <p className="text-sm text-slate-400">Estimated monthly repayment</p>
           <p className="font-numeral mt-2 text-2xl font-semibold text-white">
-            {formatCurrency(results.monthlyRepayment)}
+            <AnimatedCurrency value={results.monthlyRepayment} />
           </p>
         </div>
 
@@ -85,14 +86,14 @@ export default function BondRepayment() {
           <div className="rounded-2xl border border-white/10 bg-white/5 p-4">
             <p className="text-sm text-slate-400">Total repayment</p>
             <p className="font-numeral mt-2 text-xl font-semibold text-white">
-              {formatCurrency(results.totalRepayment)}
+              <AnimatedCurrency value={results.totalRepayment} />
             </p>
           </div>
 
           <div className="rounded-2xl border border-white/10 bg-white/5 p-4">
             <p className="text-sm text-slate-400">Total interest</p>
             <p className="font-numeral mt-2 text-xl font-semibold text-white">
-              {formatCurrency(results.totalInterest)}
+              <AnimatedCurrency value={results.totalInterest} />
             </p>
           </div>
         </div>

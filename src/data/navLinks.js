@@ -44,6 +44,11 @@ export const guideLinks = [
     description: "What rate to expect and how car finance actually works.",
   },
   {
+    label: "Balloon Payments Explained",
+    path: "/guides/balloon-payments",
+    description: "How a residual payment changes your monthly instalment.",
+  },
+  {
     label: "Home Loans Guide",
     path: "/guides/home-loans",
     description: "Bond approval, real costs, and affordability explained.",

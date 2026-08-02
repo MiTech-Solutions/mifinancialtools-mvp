@@ -97,5 +97,10 @@ export const debtManagementContent = {
       path: "/guides/budgeting",
       description: "Build a budget that makes room for extra debt payments.",
     },
+    {
+      label: "Balloon Payments Explained",
+      path: "/guides/balloon-payments",
+      description: "The deferred debt a balloon leaves you owing at the end.",
+    },
   ],
 };

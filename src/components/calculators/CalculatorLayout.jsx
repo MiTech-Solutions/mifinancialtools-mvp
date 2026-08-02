@@ -1,3 +1,5 @@
+import GoldTick from "../common/GoldTick";
+
 export default function CalculatorLayout({
   eyebrow,
   title,
@@ -18,6 +20,8 @@ export default function CalculatorLayout({
           <h1 className="font-display mt-6 text-3xl font-semibold tracking-tight text-white sm:text-4xl lg:text-5xl">
             {title}
           </h1>
+
+          <GoldTick width="w-16" className="mt-5" />
 
           <p className="mt-4 max-w-2xl text-base leading-7 text-slate-300 sm:text-lg sm:leading-8">
             {description}

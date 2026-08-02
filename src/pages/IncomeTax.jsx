@@ -3,6 +3,7 @@ import CalculatorLayout from "../components/calculators/CalculatorLayout";
 import CalculatorArticle from "../components/calculators/CalculatorArticle";
 import { incomeTaxContent } from "../data/content/incomeTaxContent";
 import { formatCurrency } from "../utils/formatCurrency";
+import AnimatedCurrency from "../components/common/AnimatedCurrency";
 import { Helmet } from "react-helmet-async";
 
 // ── SARS 2025/26 Tax Year (1 March 2025 – 28 February 2026) ──────────────────
@@ -125,7 +126,7 @@ export default function IncomeTax() {
 
   const toggleBase =
     "flex-1 rounded-xl px-3 py-2 text-sm font-medium transition";
-  const toggleActive   = "bg-[#C68F2A] text-white";
+  const toggleActive   = "bg-[#C68F2A] text-[#0E1613]";
   const toggleInactive = "text-slate-400 hover:text-white";
 
   // ── Result panel ──────────────────────────────────────────────────────────
@@ -147,8 +148,8 @@ export default function IncomeTax() {
       {/* Hero figure */}
       <div className="mt-6 rounded-2xl border border-[#D6A343]/20 bg-[#D6A343]/5 p-4">
         <p className="text-sm text-slate-400">Estimated monthly take-home</p>
-        <p className="mt-2 text-3xl font-bold text-white">
-          {formatCurrency(results.monthlyTakeHome)}
+        <p className="font-numeral mt-2 text-3xl font-bold text-white">
+          <AnimatedCurrency value={results.monthlyTakeHome} />
         </p>
       </div>
 
@@ -157,13 +158,13 @@ export default function IncomeTax() {
         <div className="rounded-2xl border border-white/10 bg-white/5 p-4">
           <p className="text-sm text-slate-400">Monthly PAYE tax</p>
           <p className="font-numeral mt-2 text-xl font-semibold text-white">
-            {formatCurrency(results.monthlyTax)}
+            <AnimatedCurrency value={results.monthlyTax} />
           </p>
         </div>
         <div className="rounded-2xl border border-white/10 bg-white/5 p-4">
           <p className="text-sm text-slate-400">Monthly UIF</p>
           <p className="font-numeral mt-2 text-xl font-semibold text-white">
-            {formatCurrency(results.monthlyUIF)}
+            <AnimatedCurrency value={results.monthlyUIF} />
           </p>
         </div>
       </div>

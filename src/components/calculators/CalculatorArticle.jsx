@@ -1,5 +1,7 @@
 import { Helmet } from "react-helmet-async";
 import RelatedLinks from "../common/RelatedLinks";
+import Reveal from "../common/Reveal";
+import GoldTick from "../common/GoldTick";
 import {
   Info,
   Calculator,
@@ -29,6 +31,11 @@ import {
  *   H2 Related tools & guides
  *
  * Also emits FAQPage JSON-LD structured data from the faqs prop.
+ *
+ * Section types are deliberately styled differently from each other
+ * (numbered gold-accent cards for worked examples, a divider list for
+ * FAQ, a plain stacked list for mistakes) rather than repeating the same
+ * bordered box for every section — see Phase 10 card-variety pass.
  *
  * Props:
  * - intro: string[] (paragraphs)
@@ -82,7 +89,7 @@ export default function CalculatorArticle({
         <div className="mx-auto max-w-4xl px-4 pb-20 sm:px-6 lg:px-8">
           {/* Introduction */}
           {intro.length > 0 && (
-            <div className="mt-4 space-y-4">
+            <Reveal className="mt-4 space-y-4">
               <div className="inline-flex items-center gap-2 rounded-full border border-[#D6A343]/20 bg-white/5 px-3 py-1 text-xs font-medium text-[#E8C685]">
                 <Info size={12} aria-hidden="true" />
                 Introduction
@@ -95,12 +102,12 @@ export default function CalculatorArticle({
                   {p}
                 </p>
               ))}
-            </div>
+            </Reveal>
           )}
 
           {/* How it works */}
           {howItWorks && (
-            <div className="mt-14 space-y-4">
+            <Reveal className="mt-14 space-y-4">
               <div className="inline-flex items-center gap-2 rounded-full border border-[#D6A343]/20 bg-white/5 px-3 py-1 text-xs font-medium text-[#E8C685]">
                 <Calculator size={12} aria-hidden="true" />
                 How it works
@@ -151,12 +158,12 @@ export default function CalculatorArticle({
                   </div>
                 )}
               </div>
-            </div>
+            </Reveal>
           )}
 
           {/* Formula */}
           {formula && (
-            <div className="mt-14 space-y-4">
+            <Reveal className="mt-14 space-y-4">
               <div className="inline-flex items-center gap-2 rounded-full border border-[#D6A343]/20 bg-white/5 px-3 py-1 text-xs font-medium text-[#E8C685]">
                 <BookOpen size={12} aria-hidden="true" />
                 Formula
@@ -170,7 +177,7 @@ export default function CalculatorArticle({
                 </p>
               ))}
 
-              <div className="rounded-2xl border border-white/10 bg-[#171F1B] p-5 font-mono text-sm leading-7 text-[#E8C685] sm:text-base">
+              <div className="font-numeral rounded-2xl border border-white/10 bg-[#171F1B] p-5 text-sm leading-7 text-[#E8C685] sm:text-base">
                 {formula.expression}
               </div>
 
@@ -178,18 +185,20 @@ export default function CalculatorArticle({
                 <ul className="mt-2 space-y-1.5">
                   {formula.variables.map((v) => (
                     <li key={v.symbol} className="text-sm leading-6 text-slate-400">
-                      <span className="font-mono text-[#E8C685]">{v.symbol}</span>{" "}
+                      <span className="font-numeral text-[#E8C685]">{v.symbol}</span>{" "}
                       = {v.meaning}
                     </li>
                   ))}
                 </ul>
               )}
-            </div>
+            </Reveal>
           )}
 
-          {/* Worked examples */}
+          {/* Worked examples — numbered gold-accent cards, visually
+              distinct from every other card type on the page since this
+              is where real numbers happen. */}
           {examples.length > 0 && (
-            <div className="mt-14 space-y-6">
+            <Reveal className="mt-14 space-y-6">
               <div className="inline-flex items-center gap-2 rounded-full border border-[#D6A343]/20 bg-white/5 px-3 py-1 text-xs font-medium text-[#E8C685]">
                 <Sparkles size={12} aria-hidden="true" />
                 Worked examples
@@ -199,11 +208,14 @@ export default function CalculatorArticle({
               </h2>
 
               <div className="space-y-5">
-                {examples.map((ex) => (
+                {examples.map((ex, i) => (
                   <div
                     key={ex.title}
-                    className="rounded-2xl border border-white/10 bg-white/5 p-5"
+                    className="relative overflow-hidden rounded-2xl border border-white/10 border-l-4 border-l-[#D6A343] bg-white/5 p-5 pl-6"
                   >
+                    <span className="font-numeral absolute right-5 top-4 text-3xl font-semibold text-white/5">
+                      {String(i + 1).padStart(2, "0")}
+                    </span>
                     <h3 className="text-lg font-semibold text-white">
                       {ex.title}
                     </h3>
@@ -211,8 +223,8 @@ export default function CalculatorArticle({
                       {ex.scenario}
                     </p>
                     <ol className="mt-3 list-decimal space-y-1.5 pl-5">
-                      {ex.steps.map((step, i) => (
-                        <li key={i} className="text-sm leading-6 text-slate-400">
+                      {ex.steps.map((step, si) => (
+                        <li key={si} className="text-sm leading-6 text-slate-400">
                           {step}
                         </li>
                       ))}
@@ -223,12 +235,12 @@ export default function CalculatorArticle({
                   </div>
                 ))}
               </div>
-            </div>
+            </Reveal>
           )}
 
           {/* Benefits */}
           {benefits.length > 0 && (
-            <div className="mt-14 space-y-4">
+            <Reveal className="mt-14 space-y-4">
               <h2 className="text-2xl font-semibold text-white sm:text-3xl">
                 Why use this calculator
               </h2>
@@ -240,12 +252,13 @@ export default function CalculatorArticle({
                   </li>
                 ))}
               </ul>
-            </div>
+            </Reveal>
           )}
 
-          {/* Common mistakes */}
+          {/* Common mistakes — plain stacked list with an amber rule,
+              deliberately lighter-weight than the example cards. */}
           {mistakes.length > 0 && (
-            <div className="mt-14 space-y-4">
+            <Reveal className="mt-14 space-y-4">
               <div className="inline-flex items-center gap-2 rounded-full border border-amber-400/20 bg-white/5 px-3 py-1 text-xs font-medium text-amber-300">
                 <AlertTriangle size={12} aria-hidden="true" />
                 Common mistakes
@@ -253,9 +266,9 @@ export default function CalculatorArticle({
               <h2 className="text-2xl font-semibold text-white sm:text-3xl">
                 Mistakes people make with this calculation
               </h2>
-              <div className="space-y-5">
+              <div className="divide-y divide-white/10">
                 {mistakes.map((m) => (
-                  <div key={m.title}>
+                  <div key={m.title} className="border-l-2 border-l-amber-400/40 py-4 pl-4">
                     <h3 className="text-lg font-semibold text-white">
                       {m.title}
                     </h3>
@@ -265,12 +278,13 @@ export default function CalculatorArticle({
                   </div>
                 ))}
               </div>
-            </div>
+            </Reveal>
           )}
 
-          {/* FAQ */}
+          {/* FAQ — a lighter divider list instead of repeating the same
+              bordered box the worked examples already use. */}
           {faqs.length > 0 && (
-            <div className="mt-14 space-y-4">
+            <Reveal className="mt-14 space-y-4">
               <div className="inline-flex items-center gap-2 rounded-full border border-[#D6A343]/20 bg-white/5 px-3 py-1 text-xs font-medium text-[#E8C685]">
                 <HelpCircle size={12} aria-hidden="true" />
                 FAQ
@@ -278,12 +292,10 @@ export default function CalculatorArticle({
               <h2 className="text-2xl font-semibold text-white sm:text-3xl">
                 Frequently asked questions
               </h2>
-              <div className="space-y-5">
+              <GoldTick />
+              <div className="divide-y divide-white/10">
                 {faqs.map((item) => (
-                  <div
-                    key={item.q}
-                    className="rounded-2xl border border-white/10 bg-white/5 p-5"
-                  >
+                  <div key={item.q} className="py-5">
                     <h3 className="text-base font-semibold text-white">
                       {item.q}
                     </h3>
@@ -293,11 +305,13 @@ export default function CalculatorArticle({
                   </div>
                 ))}
               </div>
-            </div>
+            </Reveal>
           )}
 
           {/* Related tools & guides */}
-          <RelatedLinks items={[...relatedTools, ...relatedGuides]} />
+          <Reveal>
+            <RelatedLinks items={[...relatedTools, ...relatedGuides]} />
+          </Reveal>
         </div>
       </section>
     </>

@@ -40,21 +40,32 @@ export default function NavDropdown({ label, items, isActive }) {
         onClick={() => setOpen((prev) => !prev)}
         aria-haspopup="true"
         aria-expanded={open}
-        className={`flex items-center gap-1.5 transition-colors duration-200 ${
+        className={`flex flex-col items-center gap-1.5 transition-colors duration-200 ${
           isActive ? "text-white" : "text-slate-300 hover:text-white"
         }`}
       >
-        {label}
-        <ChevronDown
-          size={15}
-          className={`transition-transform duration-200 ${open ? "rotate-180" : ""}`}
+        <span className="flex items-center gap-1.5">
+          {label}
+          <ChevronDown
+            size={15}
+            className={`transition-transform duration-200 ${open ? "rotate-180" : ""}`}
+          />
+        </span>
+        <span
+          className="h-px w-full transition-all duration-200"
+          style={{
+            backgroundColor: "#D6A343",
+            opacity: isActive ? 1 : 0,
+            transform: isActive ? "scaleX(1)" : "scaleX(0)",
+          }}
+          aria-hidden="true"
         />
       </button>
 
       {open && (
         <div
           role="menu"
-          className="absolute left-1/2 top-full z-50 mt-3 w-72 -translate-x-1/2 rounded-2xl border border-white/10 bg-[#171F1B] p-2 shadow-2xl"
+          className="animate-dropdown-in absolute left-1/2 top-full z-50 mt-3 w-72 -translate-x-1/2 rounded-2xl border border-white/10 bg-[#171F1B] p-2 shadow-2xl"
         >
           {items.map((item) => (
             <Link

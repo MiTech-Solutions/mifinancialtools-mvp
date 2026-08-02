@@ -18,9 +18,21 @@ export default function Navbar() {
   }, [location.pathname]);
 
   const navLinkClass = ({ isActive }) =>
-    `transition-colors duration-200 ${
+    `flex flex-col items-center gap-1.5 transition-colors duration-200 ${
       isActive ? "text-white" : "text-slate-300 hover:text-white"
     }`;
+
+  const navTick = (isActive) => (
+    <span
+      className="h-px w-full transition-all duration-200"
+      style={{
+        backgroundColor: "#D6A343",
+        opacity: isActive ? 1 : 0,
+        transform: isActive ? "scaleX(1)" : "scaleX(0)",
+      }}
+      aria-hidden="true"
+    />
+  );
 
   const isCalculatorRoute = calculatorLinks.some((c) => c.path === location.pathname);
   const isGuideRoute =
@@ -41,7 +53,12 @@ export default function Navbar() {
 
         <nav className="hidden items-center gap-8 md:flex">
           <NavLink to="/" className={navLinkClass} end>
-            Overview
+            {({ isActive }) => (
+              <>
+                <span>Overview</span>
+                {navTick(isActive)}
+              </>
+            )}
           </NavLink>
 
           <NavDropdown label="Calculators" items={calculatorLinks} isActive={isCalculatorRoute} />
@@ -51,17 +68,27 @@ export default function Navbar() {
             isActive={isGuideRoute}
           />
           <NavLink to="/about" className={navLinkClass}>
-            About
+            {({ isActive }) => (
+              <>
+                <span>About</span>
+                {navTick(isActive)}
+              </>
+            )}
           </NavLink>
           <NavLink to="/contact" className={navLinkClass}>
-            Contact
+            {({ isActive }) => (
+              <>
+                <span>Contact</span>
+                {navTick(isActive)}
+              </>
+            )}
           </NavLink>
         </nav>
 
         <div className="hidden md:block">
           <Link
             to="/car-repayment"
-            className="inline-flex items-center rounded-xl bg-[#C68F2A] px-4 py-2 text-sm font-medium text-white transition hover:bg-[#D6A343]"
+            className="inline-flex items-center rounded-xl bg-[#C68F2A] px-4 py-2 text-sm font-medium text-[#0E1613] transition hover:bg-[#D6A343]"
           >
             Try a calculator
           </Link>
@@ -78,8 +105,7 @@ export default function Navbar() {
       </div>
 
       {isOpen && (
-        <div className="border-t border-white/10 bg-[#171F1B] md:hidden">
-          <div className="mx-auto flex max-w-7xl flex-col px-4 py-4 sm:px-6">
+        <div className="animate-slide-down border-t border-white/10 bg-[#171F1B] md:hidden">          <div className="mx-auto flex max-w-7xl flex-col px-4 py-4 sm:px-6">
             <div className="flex flex-col gap-1">
               <NavLink
                 to="/"
@@ -190,7 +216,7 @@ export default function Navbar() {
 
             <Link
               to="/car-repayment"
-              className="mt-4 inline-flex items-center justify-center rounded-xl bg-[#C68F2A] px-4 py-3 text-sm font-medium text-white transition hover:bg-[#D6A343]"
+              className="mt-4 inline-flex items-center justify-center rounded-xl bg-[#C68F2A] px-4 py-3 text-sm font-medium text-[#0E1613] transition hover:bg-[#D6A343]"
             >
               Try a calculator
             </Link>

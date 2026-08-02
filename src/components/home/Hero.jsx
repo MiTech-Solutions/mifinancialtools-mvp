@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
+import AnimatedCurrency from "../common/AnimatedCurrency";
 
 export default function Hero() {
   return (
@@ -8,21 +9,33 @@ export default function Hero() {
 
       <div className="relative mx-auto grid max-w-7xl items-center gap-14 px-4 py-20 sm:px-6 md:py-24 lg:grid-cols-2 lg:px-8 lg:py-28">
         <div>
-          <div className="inline-flex items-center rounded-full border border-[#D6A343]/20 bg-white/5 px-4 py-2 text-sm text-[#E8C685] backdrop-blur">
+          <div
+            className="animate-fade-in-up inline-flex items-center rounded-full border border-[#D6A343]/20 bg-white/5 px-4 py-2 text-sm text-[#E8C685] backdrop-blur"
+            style={{ animationDelay: "0ms" }}
+          >
             Built for South African money decisions
           </div>
 
-          <h1 className="font-display mt-6 max-w-3xl text-4xl font-semibold leading-tight tracking-tight text-white sm:text-5xl lg:text-6xl">
+          <h1
+            className="font-display animate-fade-in-up mt-6 max-w-3xl text-4xl font-semibold leading-tight tracking-tight text-white sm:text-5xl lg:text-6xl"
+            style={{ animationDelay: "80ms" }}
+          >
             Turn a real decision into a real number.
           </h1>
 
-          <p className="mt-6 max-w-2xl text-lg leading-8 text-slate-300">
+          <p
+            className="animate-fade-in-up mt-6 max-w-2xl text-lg leading-8 text-slate-300"
+            style={{ animationDelay: "160ms" }}
+          >
             Car finance, bond repayments, SARS-accurate tax, and long-term
             growth — calculated with actual South African rates and
             brackets, not generic estimates built for another country.
           </p>
 
-          <div className="mt-8 flex flex-col gap-4 sm:flex-row">
+          <div
+            className="animate-fade-in-up mt-8 flex flex-col gap-4 sm:flex-row"
+            style={{ animationDelay: "240ms" }}
+          >
             <Link
               to="/car-repayment"
               className="inline-flex items-center justify-center rounded-2xl bg-[#C68F2A] px-6 py-3 text-sm font-medium text-[#0E1613] transition hover:bg-[#D6A343]"
@@ -39,7 +52,10 @@ export default function Hero() {
             </Link>
           </div>
 
-          <div className="mt-10 flex flex-wrap gap-3">
+          <div
+            className="animate-fade-in-up mt-10 flex flex-wrap gap-3"
+            style={{ animationDelay: "320ms" }}
+          >
             <div className="rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm text-slate-300">
               SARS 2025/26 tax tables
             </div>
@@ -53,9 +69,13 @@ export default function Hero() {
         </div>
 
         {/* Signature element: the number IS the hero visual — a live
-            example read-out styled like an instrument-panel figure,
-            replacing the generic "product mockup" card pattern. */}
-        <div className="relative">
+            example read-out styled like an instrument-panel figure. It
+            counts up on load and the tick-mark rule draws in beneath it,
+            rather than appearing all at once. */}
+        <div
+          className="animate-fade-in-up relative"
+          style={{ animationDelay: "200ms" }}
+        >
           <div className="absolute -inset-6 rounded-[2rem] bg-gradient-to-br from-[#C68F2A]/15 to-[#4E9B6E]/10 blur-2xl" />
 
           <div className="relative rounded-[2rem] border border-white/10 bg-white/5 p-6 shadow-2xl backdrop-blur-xl sm:p-8">
@@ -71,13 +91,14 @@ export default function Hero() {
                 Monthly repayment
               </p>
               <p className="font-numeral mt-2 text-5xl font-semibold text-white sm:text-6xl">
-                R8,240
+                <AnimatedCurrency value={8240} />
               </p>
               <div
-                className="mt-4 h-2 w-full opacity-70"
+                className="animate-draw-tick mt-4 h-2 w-full opacity-70"
                 style={{
                   backgroundImage:
                     "repeating-linear-gradient(90deg, #D6A343 0, #D6A343 2px, transparent 2px, transparent 12px)",
+                  animationDelay: "500ms",
                 }}
                 aria-hidden="true"
               />
@@ -87,13 +108,13 @@ export default function Hero() {
               <div>
                 <p className="text-xs text-slate-500">Loan amount</p>
                 <p className="font-numeral mt-1 text-lg font-semibold text-white">
-                  R765,000
+                  <AnimatedCurrency value={765000} />
                 </p>
               </div>
               <div>
                 <p className="text-xs text-slate-500">Total interest</p>
                 <p className="font-numeral mt-1 text-lg font-semibold text-white">
-                  R1,212,600
+                  <AnimatedCurrency value={1212600} />
                 </p>
               </div>
             </div>

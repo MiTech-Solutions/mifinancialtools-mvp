@@ -3,6 +3,7 @@ import CalculatorLayout from "../components/calculators/CalculatorLayout";
 import CalculatorArticle from "../components/calculators/CalculatorArticle";
 import { compoundInterestContent } from "../data/content/compoundInterestContent";
 import { formatCurrency } from "../utils/formatCurrency";
+import AnimatedCurrency from "../components/common/AnimatedCurrency";
 import { Helmet } from "react-helmet-async";
 
 
@@ -64,7 +65,7 @@ export default function CompoundInterest() {
         <div className="rounded-2xl border border-white/10 bg-white/5 p-4">
           <p className="text-sm text-slate-400">Projected future value</p>
           <p className="font-numeral mt-2 text-2xl font-semibold text-white">
-            {formatCurrency(results.futureValue)}
+            <AnimatedCurrency value={results.futureValue} />
           </p>
         </div>
 
@@ -72,14 +73,14 @@ export default function CompoundInterest() {
           <div className="rounded-2xl border border-white/10 bg-white/5 p-4">
             <p className="text-sm text-slate-400">Total contributions</p>
             <p className="font-numeral mt-2 text-xl font-semibold text-white">
-              {formatCurrency(results.totalContributions)}
+              <AnimatedCurrency value={results.totalContributions} />
             </p>
           </div>
 
           <div className="rounded-2xl border border-white/10 bg-white/5 p-4">
             <p className="text-sm text-slate-400">Estimated growth</p>
             <p className="font-numeral mt-2 text-xl font-semibold text-white">
-              {formatCurrency(results.totalGrowth)}
+              <AnimatedCurrency value={results.totalGrowth} />
             </p>
           </div>
         </div>

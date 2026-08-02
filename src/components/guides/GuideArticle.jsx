@@ -1,6 +1,8 @@
 import { Helmet } from "react-helmet-async";
 import { CheckCircle2, HelpCircle } from "lucide-react";
 import RelatedLinks from "../common/RelatedLinks";
+import Reveal from "../common/Reveal";
+import GoldTick from "../common/GoldTick";
 
 /**
  * GuideArticle
@@ -42,16 +44,18 @@ export default function GuideArticle({
         </Helmet>
       ) : null}
 
-      <article className="space-y-4">
-        {intro.map((p, i) => (
-          <p key={i} className="text-base leading-7 text-slate-300">
-            {p}
-          </p>
-        ))}
-      </article>
+      <Reveal>
+        <article className="space-y-4">
+          {intro.map((p, i) => (
+            <p key={i} className="text-base leading-7 text-slate-300">
+              {p}
+            </p>
+          ))}
+        </article>
+      </Reveal>
 
-      {sections.map((section) => (
-        <div key={section.heading} className="mt-12 space-y-4">
+      {sections.map((section, si) => (
+        <Reveal key={section.heading} delay={si === 0 ? 0 : 60} className="mt-12 space-y-4">
           <h2 className="text-2xl font-semibold text-white sm:text-3xl">
             {section.heading}
           </h2>
@@ -70,12 +74,13 @@ export default function GuideArticle({
               ))}
             </ul>
           )}
-        </div>
+        </Reveal>
       ))}
 
       {keyTakeaways.length > 0 && (
-        <div className="mt-12 rounded-[1.75rem] border border-[#D6A343]/20 bg-[#D6A343]/5 p-6 sm:p-8">
+        <Reveal className="mt-12 rounded-[1.75rem] border border-[#D6A343]/20 bg-[#D6A343]/5 p-6 sm:p-8">
           <h2 className="text-xl font-semibold text-white">Key takeaways</h2>
+          <GoldTick className="mt-3" />
           <ul className="mt-4 space-y-3">
             {keyTakeaways.map((item, i) => (
               <li key={i} className="flex gap-3 text-sm leading-6 text-slate-300">
@@ -84,11 +89,11 @@ export default function GuideArticle({
               </li>
             ))}
           </ul>
-        </div>
+        </Reveal>
       )}
 
       {faqs.length > 0 && (
-        <div className="mt-12 space-y-4">
+        <Reveal className="mt-12 space-y-4">
           <div className="inline-flex items-center gap-2 rounded-full border border-[#D6A343]/20 bg-white/5 px-3 py-1 text-xs font-medium text-[#E8C685]">
             <HelpCircle size={12} aria-hidden="true" />
             FAQ
@@ -96,18 +101,20 @@ export default function GuideArticle({
           <h2 className="text-2xl font-semibold text-white sm:text-3xl">
             Frequently asked questions
           </h2>
-          <div className="space-y-5">
+          <div className="divide-y divide-white/10">
             {faqs.map((item) => (
-              <div key={item.q} className="rounded-2xl border border-white/10 bg-white/5 p-5">
+              <div key={item.q} className="py-5">
                 <h3 className="text-base font-semibold text-white">{item.q}</h3>
                 <p className="mt-2 text-sm leading-7 text-slate-400">{item.a}</p>
               </div>
             ))}
           </div>
-        </div>
+        </Reveal>
       )}
 
-      <RelatedLinks items={[...relatedCalculators, ...relatedGuides]} />
+      <Reveal>
+        <RelatedLinks items={[...relatedCalculators, ...relatedGuides]} />
+      </Reveal>
     </>
   );
 }
