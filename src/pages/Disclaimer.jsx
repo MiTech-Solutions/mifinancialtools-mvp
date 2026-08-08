@@ -5,7 +5,11 @@ export default function Disclaimer() {
       <Helmet>
         <title>Disclaimer | MiTools</title>
         <meta name="robots" content="noindex, follow" />
+        <meta name="description" content="Read the MiTools disclaimer before relying on any calculator result for a financial decision." />
         <link rel="canonical" href="https://mitools.app/disclaimer" />
+        <meta property="og:title" content="Disclaimer | MiTools" />
+        <meta property="og:description" content="Read the MiTools disclaimer before relying on any calculator result for a financial decision." />
+        <meta property="og:url" content="https://mitools.app/disclaimer" />
       </Helmet>
       <section className="mx-auto max-w-4xl px-4 py-16 sm:px-6 lg:px-8">
       <div className="rounded-[2rem] border border-white/10 bg-white/5 p-6 backdrop-blur-xl sm:p-8">

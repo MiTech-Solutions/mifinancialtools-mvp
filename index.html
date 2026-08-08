@@ -13,35 +13,27 @@
 
     <title> MiTools | Calculate Loans, Investments & Tax Easily </title>
 
-    <!-- Meta Description -->
-    <meta
-      name="description"
-      content="MiTools offers free financial calculators for South Africa including car loan, bond repayment, and compound interest calculators. Plan your finances and make smarter money decisions."
-    />
+    <!-- Meta description is intentionally NOT set here — each page sets
+         its own via react-helmet-async. A static one here would create the
+         same duplicate-tag conflict as the canonical/og tags above. -->
 
     <!-- Robots -->
     <meta name="robots" content="index, follow" />
 
-    <!-- Canonical -->
-    <link rel="canonical" href="https://mitools.app/" />
-
-    <!-- Open Graph -->
+    <!-- Open Graph & Twitter fallbacks — only the values that are genuinely
+         identical on every page. og:title, og:description, og:url, and
+         twitter:title/description are deliberately NOT set here: each page
+         sets its own correct values via react-helmet-async, and having a
+         static value here as well created duplicate, conflicting tags that
+         Google was using instead of the correct per-page ones (this is what
+         caused car-repayment/bond-repayment/compound-interest to be
+         classified as "Alternate page with proper canonical tag" pointing
+         at the homepage — same root cause, same fix). Twitter's card parser
+         falls back to og:title/og:description automatically when its own
+         tags are absent, so nothing is lost by omitting them here. -->
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="MiTools | Free Financial Calculators South Africa" />
-    <meta
-      property="og:description"
-      content="Use MiTools to calculate car loans, home loans, taxes, and investments in South Africa. Free, fast, and easy financial tools."
-    />
-    <meta property="og:url" content="https://mitools.app/" />
     <meta property="og:image" content="https://mitools.app/og-image.png" />
-
-    <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="MiTools | Free Financial Calculators South Africa" />
-    <meta
-      name="twitter:description"
-      content="Free South African financial calculators for car loans, bonds, tax, and investments. Built for smarter money decisions."
-    />
     <meta name="twitter:image" content="https://mitools.app/og-image.png" />
 
     <!--

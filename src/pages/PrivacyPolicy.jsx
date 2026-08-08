@@ -5,7 +5,11 @@ export default function PrivacyPolicy() {
       <Helmet>
         <title>Privacy Policy | MiTools</title>
         <meta name="robots" content="noindex, follow" />
+        <meta name="description" content="How MiTools collects, uses, and protects your information." />
         <link rel="canonical" href="https://mitools.app/privacy-policy" />
+        <meta property="og:title" content="Privacy Policy | MiTools" />
+        <meta property="og:description" content="How MiTools collects, uses, and protects your information." />
+        <meta property="og:url" content="https://mitools.app/privacy-policy" />
       </Helmet>
       <section className="mx-auto max-w-4xl px-4 py-16 sm:px-6 lg:px-8">
       <div className="rounded-[2rem] border border-white/10 bg-white/5 p-6 backdrop-blur-xl sm:p-8">
